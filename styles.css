@@ -129,7 +129,7 @@ body{
   margin:0;
   padding: 10px;
   position:absolute;
- .submenu{ top: 100% };
+ .submenu{ top: 100%; };
   left: 0;
   min-width: 220px;
   background: #fff;
