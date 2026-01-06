@@ -387,3 +387,39 @@ body{
   .menu-item.has-sub:hover > .submenu{ display:block; }
   .submenu li.has-sub:hover > .submenu{ display:block; }
 }
+
+/* ===============================
+   FIX：讓你的 submenu 能顯示
+   （完全對應你貼的 nav HTML）
+   =============================== */
+
+/* 保證 nav 本體在桌機一定可見 */
+@media (min-width: 861px){
+  .nav{
+    display: block !important;
+  }
+}
+
+/* 第一層下拉（組織運作區 / 社團活動績效區 / 財務管理區） */
+.menu-item.has-sub:hover > .submenu{
+  display: block !important;
+}
+
+/* 第二層下拉（年度計畫 / 管理運作 / 年度活動 / 經費控管 等） */
+.submenu li.has-sub:hover > .submenu{
+  display: block !important;
+}
+
+/* 位置與層級，避免被蓋住 */
+.menu-item{ position: relative; }
+.submenu{
+  z-index: 9999;
+}
+
+/* 第二層位置修正 */
+@media (min-width: 861px){
+  .submenu.level-2{
+    left: 100%;
+    top: 0;
+  }
+}
