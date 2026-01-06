@@ -423,3 +423,85 @@ body{
     top: 0;
   }
 }
+
+/* ===============================
+   Dropdown：改成點擊開合（不會滑走就消失）
+   =============================== */
+
+.menu,
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 讓有子選單的項目成為定位基準 */
+.has-sub {
+  position: relative;
+}
+
+/* 預設全部子選單先關閉 */
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  z-index: 9999;
+}
+
+/* 第二層：往右開 */
+.submenu.level-2 {
+  top: -8px;
+  left: calc(100% + 12px);
+}
+
+/* 只有在 .open 時才顯示 */
+.has-sub.open > .submenu {
+  display: block;
+}
+
+/* 按鈕樣式（你可以依照原本設計再微調） */
+.menu-link,
+.submenu-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* 子選單內項目 hover */
+.submenu a.submenu-link,
+.submenu button.submenu-link {
+  color: #111;
+  text-decoration: none;
+}
+
+.submenu a.submenu-link:hover,
+.submenu button.submenu-link:hover {
+  background: rgba(0,0,0,.06);
+}
+
+/* ＋號旋轉表示展開 */
+.has-sub.open > .menu-link .plus,
+.has-sub.open > .submenu-link .plus {
+  transform: rotate(45deg);
+}
+
+.plus {
+  transition: transform .15s ease;
+  line-height: 1;
+}
