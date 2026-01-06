@@ -50,7 +50,7 @@ body{
   gap: 10px;
   text-decoration:none;
   color: var(--text);
-  font-weight: 700;
+  font-weight: 800;
 }
 .brand-mark{
   width: 18px;
@@ -61,7 +61,7 @@ body{
 }
 .brand-text{ white-space: nowrap; }
 
-/* nav toggle (mobile) */
+/* ===== Mobile Toggle ===== */
 .nav-toggle{
   margin-left: auto;
   width: 44px;
@@ -72,6 +72,7 @@ body{
   display:none;
   align-items:center;
   justify-content:center;
+  cursor:pointer;
 }
 .nav-toggle-lines{
   width: 18px;
@@ -109,88 +110,90 @@ body{
   padding: 10px 12px;
   border-radius: 12px;
   color: #111;
-  font-weight: 600;
+  font-weight: 700;
   cursor:pointer;
   font-size: 14px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
 }
 .menu-link.is-link{
   text-decoration:none;
-  display:inline-block;
+  display:inline-flex;
 }
+
 .menu-link:hover{
   background: #f3f4f6;
 }
 
 .menu-item{ position: relative; }
 
-/* Submenu (desktop hover) */
+/* Right-side + */
+.plus{
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1;
+  opacity: .75;
+  transform: rotate(0deg);
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* Submenu base */
 .submenu{
   list-style:none;
-  margin:0;
+  margin: 0;
   padding: 10px;
-  position:absolute;
- .submenu{ top: 100%; };
-  left: 0;
-  min-width: 220px;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: var(--shadow);
-  display:none;
+  display: none;
 }
 
-.submenu .submenu{
-  top: 0;
-  left: calc(100% + 10px);
-  min-width: 240px;
+/* Desktop positioning */
+@media (min-width: 861px){
+  .submenu{
+    position:absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 240px;
+  }
+  .submenu.level-2{
+    position:absolute;
+    top: 0;
+    left: calc(100% + 8px);
+    min-width: 260px;
+  }
 }
 
+/* submenu links/buttons */
 .submenu-link{
   width: 100%;
-  text-align:left;
   border: 0;
   background: transparent;
   cursor:pointer;
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
   padding: 10px 10px;
   border-radius: 10px;
   color:#111;
   text-decoration:none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
 }
+.submenu-link:hover{ background:#f3f4f6; }
 
-.submenu-link:hover{
-  background:#f3f4f6;
+/* OPEN state controls (click-based) */
+.has-sub.open > .submenu{ display:block; }
+.has-sub.open > button .plus{ transform: rotate(45deg); opacity: 1; }
+
+/* Second level indentation on mobile */
+@media (max-width: 860px){
+  .submenu.level-2{ padding-left: 10px; }
 }
-
-.menu-item.has-sub:hover > .submenu{
-  display:block;
-}
-
-.submenu li.has-sub:hover > .submenu{
-  display:block;
-}
-
-/* 讓下拉選單與主選單之間的空隙不會斷 hover（透明橋） */
-.menu-item.has-sub { position: relative; }
-
-.menu-item.has-sub::after{
-  content:"";
-  position:absolute;
-  left:0;
-  top:100%;
-  width:100%;
-  height:10px;        /* 這裡就是你原本的空隙高度，例如 8~12 都可 */
-  background:transparent;
-}
-
-/* 確保滑到 submenu 本身也保持顯示 */
-.menu-item.has-sub:hover > .submenu,
-.menu-item.has-sub:focus-within > .submenu{
-  display:block;
-}
-
 
 /* ===== Hero ===== */
 .hero{
@@ -226,7 +229,7 @@ body{
   margin: 0 0 18px;
   color: #333;
   line-height: 1.7;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hero-actions{
@@ -243,7 +246,7 @@ body{
   padding: 0 14px;
   border-radius: 12px;
   text-decoration:none;
-  font-weight: 700;
+  font-weight: 800;
   border: 1px solid transparent;
 }
 .btn.primary{
@@ -307,12 +310,21 @@ body{
   margin:0;
   color: var(--muted);
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 600;
 }
 .card:hover{
   transform: translateY(-1px);
   transition: transform .15s ease;
 }
+
+.contact-card{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  background:#fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,.04);
+}
+.link{ text-decoration: underline; color: #111; }
 
 /* ===== Footer ===== */
 .footer{
@@ -325,22 +337,19 @@ body{
   margin: 0 auto;
   padding: 0 18px;
   color: var(--muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 980px){
-  .hero-inner{
-    grid-template-columns: 1fr;
-  }
-  .cards-3{
-    grid-template-columns: 1fr;
-  }
+  .hero-inner{ grid-template-columns: 1fr; }
+  .cards-3{ grid-template-columns: 1fr; }
 }
 
-/* Mobile menu behavior */
+/* ===== Mobile Menu Layout ===== */
 @media (max-width: 860px){
   .nav-toggle{ display:flex; }
+
   .nav{
     position: fixed;
     top: var(--nav-height);
@@ -358,13 +367,12 @@ body{
     align-items: stretch;
     gap: 4px;
   }
+
   .menu-link{
     width: 100%;
     text-align:left;
   }
 
-  /* disable hover open on mobile; use JS to toggle */
-  .menu-item.has-sub:hover > .submenu{ display:none; }
   .submenu{
     position: static;
     border: 0;
@@ -372,11 +380,4 @@ body{
     padding: 6px 6px 10px;
     display:none;
   }
-  .submenu .submenu{
-    padding-left: 10px;
-  }
-
-  .menu-item.open > .submenu{ display:block; }
-  .submenu li.open > .submenu{ display:block; }
 }
-
