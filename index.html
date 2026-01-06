@@ -204,3 +204,52 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<script>
+  (function () {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+
+    // 取得所有可開合的按鈕（第一層 + 第二層）
+    const toggles = nav.querySelectorAll('.has-sub > button');
+
+    function closeAll(exceptLi) {
+      nav.querySelectorAll('.has-sub.open').forEach(li => {
+        if (exceptLi && (li === exceptLi || li.contains(exceptLi))) return;
+        li.classList.remove('open');
+        const btn = li.querySelector(':scope > button');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    toggles.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const li = btn.closest('.has-sub');
+        const isOpen = li.classList.contains('open');
+
+        // 同層只保留一個展開（更像你參考的黑色選單）
+        // 若你希望可以同時開很多個，把下一行註解掉
+        closeAll(li);
+
+        if (!isOpen) {
+          li.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          li.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // 點選單外面：全部關閉
+    document.addEventListener('click', () => closeAll());
+
+    // ESC 關閉
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAll();
+    });
+  })();
+</script>
