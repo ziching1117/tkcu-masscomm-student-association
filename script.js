@@ -1,51 +1,70 @@
 (function () {
-  const toggleBtn = document.querySelector(".nav-toggle");
   const body = document.body;
+  const toggleBtn = document.querySelector(".nav-toggle");
 
   // Mobile: open/close main nav
-  toggleBtn?.addEventListener("click", () => {
+  toggleBtn?.addEventListener("click", (e) => {
     const isOpen = body.classList.toggle("nav-open");
     toggleBtn.setAttribute("aria-expanded", String(isOpen));
+    e.stopPropagation();
   });
 
-  // Mobile: open/close dropdowns by clicking buttons
+  // Click-to-toggle dropdowns (desktop + mobile)
   const dropdownButtons = document.querySelectorAll(".has-sub > button");
 
   dropdownButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      // only apply on mobile layout
-      if (window.matchMedia("(max-width: 860px)").matches) {
-        const li = btn.closest(".has-sub");
-        const isOpen = li.classList.toggle("open");
-        btn.setAttribute("aria-expanded", String(isOpen));
-        e.stopPropagation();
+      const li = btn.closest(".has-sub");
+      if (!li) return;
+
+      // Same level: only one open
+      const parentList = li.parentElement;
+      if (parentList) {
+        parentList.querySelectorAll(":scope > .has-sub.open").forEach((sib) => {
+          if (sib !== li) {
+            sib.classList.remove("open");
+            const sibBtn = sib.querySelector(":scope > button");
+            sibBtn?.setAttribute("aria-expanded", "false");
+          }
+        });
       }
+
+      // Toggle current
+      const willOpen = !li.classList.contains("open");
+      li.classList.toggle("open", willOpen);
+      btn.setAttribute("aria-expanded", String(willOpen));
+
+      e.stopPropagation();
     });
   });
 
-  // Close menu when clicking outside (mobile)
+  // Click outside: close everything
   document.addEventListener("click", (e) => {
-    if (!window.matchMedia("(max-width: 860px)").matches) return;
     const nav = document.querySelector(".nav");
     const inNav = nav?.contains(e.target);
-    const inBtn = toggleBtn?.contains(e.target);
+    const inToggle = toggleBtn?.contains(e.target);
 
-    if (!inNav && !inBtn) {
+    if (!inNav && !inToggle) {
       body.classList.remove("nav-open");
       toggleBtn?.setAttribute("aria-expanded", "false");
-      document.querySelectorAll(".has-sub.open").forEach((li) => li.classList.remove("open"));
-      document.querySelectorAll(".has-sub > button[aria-expanded='true']").forEach((b) => b.setAttribute("aria-expanded", "false"));
+
+      document.querySelectorAll(".has-sub.open").forEach((li) => {
+        li.classList.remove("open");
+        const b = li.querySelector(":scope > button");
+        b?.setAttribute("aria-expanded", "false");
+      });
     }
   });
 
-  // On resize: reset mobile states to avoid stuck open
+  // On resize: close menus to avoid stuck states
   window.addEventListener("resize", () => {
-    if (!window.matchMedia("(max-width: 860px)").matches) {
-      body.classList.remove("nav-open");
-      toggleBtn?.setAttribute("aria-expanded", "false");
-      document.querySelectorAll(".has-sub.open").forEach((li) => li.classList.remove("open"));
-      document.querySelectorAll(".has-sub > button[aria-expanded='true']").forEach((b) => b.setAttribute("aria-expanded", "false"));
-    }
+    body.classList.remove("nav-open");
+    toggleBtn?.setAttribute("aria-expanded", "false");
+    document.querySelectorAll(".has-sub.open").forEach((li) => {
+      li.classList.remove("open");
+      const b = li.querySelector(":scope > button");
+      b?.setAttribute("aria-expanded", "false");
+    });
   });
 })();
 
