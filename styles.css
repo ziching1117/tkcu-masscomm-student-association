@@ -129,7 +129,7 @@ body{
   margin:0;
   padding: 10px;
   position:absolute;
-  top: calc(100% + 8px);
+ .submenu{ top: 100% };
   left: 0;
   min-width: 220px;
   background: #fff;
@@ -171,6 +171,26 @@ body{
 .submenu li.has-sub:hover > .submenu{
   display:block;
 }
+
+/* 讓下拉選單與主選單之間的空隙不會斷 hover（透明橋） */
+.menu-item.has-sub { position: relative; }
+
+.menu-item.has-sub::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:100%;
+  width:100%;
+  height:10px;        /* 這裡就是你原本的空隙高度，例如 8~12 都可 */
+  background:transparent;
+}
+
+/* 確保滑到 submenu 本身也保持顯示 */
+.menu-item.has-sub:hover > .submenu,
+.menu-item.has-sub:focus-within > .submenu{
+  display:block;
+}
+
 
 /* ===== Hero ===== */
 .hero{
