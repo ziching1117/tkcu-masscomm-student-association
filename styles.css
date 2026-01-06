@@ -381,3 +381,9 @@ body{
     display:none;
   }
 }
+
+/* === 桌機保底：滑鼠移上去也會展開（就算 JS 沒載入也看得到） === */
+@media (min-width: 861px){
+  .menu-item.has-sub:hover > .submenu{ display:block; }
+  .submenu li.has-sub:hover > .submenu{ display:block; }
+}
