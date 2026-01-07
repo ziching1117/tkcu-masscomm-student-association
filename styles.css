@@ -1,170 +1,200 @@
+/* =========================================================
+   TKU MassComm Student Association - styles.css (clean build)
+   Works with:
+   - .nav-toggle button toggles body.nav-open
+   - .menu / .menu-item / .menu-link
+   - .submenu / .submenu-link
+   - .has-sub + .open for click-open on mobile
+   - desktop hover dropdown
+   Breakpoint: 600px (<=600 mobile, >600 desktop)
+   ========================================================= */
+
+/* ========== Base / Reset ========== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "PingFang TC", "Noto Sans TC", "Microsoft JhengHei",
+               Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+a{ color: inherit; text-decoration: none; }
+button{ font: inherit; color: inherit; }
+
 :root{
+  --nav-height: 72px;
+  --max: 1120px;
+
   --bg: #ffffff;
   --text: #111111;
-  --muted: #6b7280;
-  --border: #e5e7eb;
+  --muted: #555555;
 
-  --nav-height: 72px;
+  --beige: #f2e3d1;
+  --blue: #1f3b7a;
 
-  --shadow: 0 12px 30px rgba(0,0,0,.08);
-  --radius: 16px;
-
-  --beige: #f5e7d8;
-  --btn: #1f3a8a;
-  --btnText: #ffffff;
-
-  --max: 1100px;
+  --border: #e9e9e9;
+  --radius: 18px;
+  --shadow: 0 10px 28px rgba(0,0,0,.08);
 }
 
-*{ box-sizing: border-box; }
-html,body{ margin:0; padding:0; }
-body{
-  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-  color: var(--text);
-  background: var(--bg);
-}
-
-/* ===== Topbar ===== */
-.topbar{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
-
-.topbar-inner{
-  height: var(--nav-height);
+/* Utility container */
+.container{
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 18px;
-  display:flex;
-  align-items:center;
-  gap: 14px;
+}
+
+/* Prevent content hidden under fixed header */
+main{ padding-top: var(--nav-height); }
+
+/* ========== Header / Topbar ========== */
+.header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 999;
+}
+
+.header-inner{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .brand{
-  display:flex;
-  align-items:center;
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
-  text-decoration:none;
-  color: var(--text);
-  font-weight: 800;
+  min-width: 0;
 }
-.brand-mark{
-  width: 18px;
-  height: 18px;
-  background: #0f172a;
-  border-radius: 4px;
-  display:inline-block;
-}
-.brand-text{ white-space: nowrap; }
 
-/* ===== Mobile Toggle ===== */
+.brand-dot{
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: #111;
+  flex: 0 0 auto;
+}
+
+.brand-title{
+  font-weight: 800;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ========== Nav Toggle (Hamburger) ========== */
 .nav-toggle{
-  margin-left: auto;
-  width: 44px;
+  display: none; /* desktop hidden */
+  width: 46px;
   height: 40px;
   border: 1px solid var(--border);
-  background: #fff;
   border-radius: 12px;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.nav-toggle-lines{
+
+.nav-toggle-lines,
+.nav-toggle-lines::before,
+.nav-toggle-lines::after{
+  display: block;
   width: 18px;
   height: 2px;
   background: #111;
+  border-radius: 999px;
+  content: "";
   position: relative;
-  display:block;
 }
-.nav-toggle-lines::before,
-.nav-toggle-lines::after{
-  content:"";
-  position:absolute;
-  left:0;
-  width: 18px;
-  height: 2px;
-  background:#111;
-}
-.nav-toggle-lines::before{ top:-6px; }
-.nav-toggle-lines::after{ top:6px; }
 
-/* ===== Menu ===== */
-.nav{ margin-left: auto; }
+.nav-toggle-lines::before{ position: absolute; top: -6px; left: 0; }
+.nav-toggle-lines::after{ position: absolute; top: 6px; left: 0; }
+
+/* ========== Desktop Nav (default) ========== */
+.nav{
+  display: block; /* desktop always show */
+}
+
 .menu{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  align-items:center;
-  gap: 6px;
-}
-
-.menu-link{
-  border: 0;
-  background: transparent;
-  padding: 10px 12px;
-  border-radius: 12px;
-  color: #111;
-  font-weight: 700;
-  cursor:pointer;
-  font-size: 14px;
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.menu-link.is-link{
-  text-decoration:none;
-  display:inline-flex;
-}
-
-.menu-link:hover{
-  background: #f3f4f6;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .menu-item{ position: relative; }
 
-/* Right-side + */
-.plus{
-  font-weight: 900;
-  font-size: 18px;
-  line-height: 1;
-  opacity: .75;
-  transform: rotate(0deg);
-  transition: transform .15s ease, opacity .15s ease;
+.menu-link{
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-/* Submenu base */
+.menu-link.is-link{
+  display: inline-flex;
+}
+
+.menu-link:hover{
+  background: rgba(0,0,0,.04);
+}
+
+/* plus / x symbol area */
+.plus{
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: .75;
+}
+
+/* Desktop dropdown panel */
 .submenu{
-  list-style:none;
+  list-style: none;
   margin: 0;
   padding: 10px;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 18px;
   box-shadow: var(--shadow);
-  display: none;
+  min-width: 260px;
+
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+
+  display: none; /* hidden by default */
 }
 
-/* Desktop positioning */
-@media (min-width: 861px){
-  .submenu{
-    position:absolute;
-    top: calc(100% + 6px);
-    left: 0;
-    min-width: 240px;
-  }
-  .submenu.level-2{
-    position:absolute;
-    top: 0;
-    left: calc(100% + 8px);
-    min-width: 260px;
-  }
+/* Keep dropdown visible while hovering parent OR dropdown itself */
+.menu-item.has-sub:hover > .submenu,
+.menu-item.has-sub:focus-within > .submenu{
+  display: block;
 }
 
 /* submenu links/buttons */
@@ -172,41 +202,55 @@ body{
   width: 100%;
   border: 0;
   background: transparent;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 10px 10px;
-  border-radius: 10px;
-  color:#111;
-  text-decoration:none;
+  gap: 12px;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #111;
+  text-decoration: none;
   font-weight: 700;
   font-size: 14px;
 }
-.submenu-link:hover{ background:#f3f4f6; }
 
-/* OPEN state controls (click-based) */
-.has-sub.open > .submenu{ display:block; }
-.has-sub.open > button .plus{ transform: rotate(45deg); opacity: 1; }
-
-/* Second level indentation on mobile */
-@media (max-width: 860px){
-  .submenu.level-2{ padding-left: 10px; }
+.submenu-link:hover{
+  background: rgba(0,0,0,.04);
 }
 
-/* ===== Hero ===== */
+/* second level (right side flyout) on desktop */
+.submenu.level-2{
+  top: 0;
+  left: calc(100% + 10px);
+  display: none;
+  position: absolute;
+}
+
+/* Show 2nd level when hovering the 2nd-level parent item */
+.submenu > li.has-sub{
+  position: relative;
+}
+
+.submenu > li.has-sub:hover > .submenu.level-2,
+.submenu > li.has-sub:focus-within > .submenu.level-2{
+  display: block;
+}
+
+/* Avoid flyout going off-screen too easily */
+@media (min-width: 601px){
+  .submenu{ max-width: 340px; }
+}
+
+/* ========== Main Content (simple template) ========== */
 .hero{
-  padding: 26px 0 24px;
-  background:
-    radial-gradient(1200px 200px at 50% -50%, rgba(0,0,0,.06), transparent 60%),
-    #fff;
+  padding: 28px 0 22px;
 }
+
 .hero-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 18px;
-  display:grid;
+  display: grid;
   grid-template-columns: 1.1fr 1.4fr;
   gap: 22px;
   align-items: stretch;
@@ -215,464 +259,205 @@ body{
 .hero-left{
   background: var(--beige);
   border-radius: var(--radius);
-  padding: 28px;
   box-shadow: var(--shadow);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 320px;
 }
 
 .hero-title{
   margin: 0 0 10px;
-  font-size: 40px;
-  line-height: 1.15;
+  font-size: 44px;
+  line-height: 1.08;
   letter-spacing: .2px;
 }
+
 .hero-desc{
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   color: #333;
-  line-height: 1.7;
+  line-height: 1.6;
   font-weight: 600;
 }
 
 .hero-actions{
-  display:flex;
+  display: flex;
   gap: 10px;
+  margin-top: 8px;
   flex-wrap: wrap;
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 42px;
-  padding: 0 14px;
-  border-radius: 12px;
-  text-decoration:none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 10px 16px;
   font-weight: 800;
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
 }
+
 .btn.primary{
-  background: var(--btn);
-  color: var(--btnText);
-}
-.btn.ghost{
-  background: transparent;
-  border-color: rgba(17,17,17,.18);
-  color: #111;
+  background: var(--blue);
+  color: #fff;
+  border-color: transparent;
 }
 
 .hero-right{
   border-radius: var(--radius);
-  overflow:hidden;
   box-shadow: var(--shadow);
-  background:#f3f4f6;
-}
-.hero-right img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  display:block;
+  overflow: hidden;
+  min-height: 320px;
+  background: #eee;
 }
 
-/* ===== Section ===== */
+.hero-right img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* quick cards */
 .section{
-  padding: 18px 0 48px;
+  padding: 10px 0 36px;
 }
-.section-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 18px;
-}
+
 .section-title{
-  margin: 10px 0 14px;
-  font-size: 20px;
-  letter-spacing: .2px;
+  margin: 18px 0 14px;
+  font-size: 22px;
+  font-weight: 900;
 }
 
 .cards-3{
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+
 .card{
-  display:block;
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.05);
   padding: 16px;
-  text-decoration:none;
-  color: #111;
-  background:#fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,.04);
 }
+
 .card h3{
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   font-size: 16px;
+  font-weight: 900;
 }
+
 .card p{
-  margin:0;
-  color: var(--muted);
-  line-height: 1.6;
+  margin: 0;
+  color: #555;
   font-weight: 600;
-}
-.card:hover{
-  transform: translateY(-1px);
-  transition: transform .15s ease;
+  line-height: 1.5;
 }
 
-.contact-card{
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-  background:#fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,.04);
-}
-.link{ text-decoration: underline; color: #111; }
-
-/* ===== Footer ===== */
+/* footer */
 .footer{
   border-top: 1px solid var(--border);
   padding: 18px 0;
-  background:#fff;
-}
-.footer-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 18px;
-  color: var(--muted);
-  font-weight: 700;
+  color: #666;
+  font-weight: 600;
 }
 
-/* ===== Responsive ===== */
+/* ========== Responsive ========== */
 @media (max-width: 980px){
-  .hero-inner{ grid-template-columns: 1fr; }
-  .cards-3{ grid-template-columns: 1fr; }
+  .hero-inner{
+    grid-template-columns: 1fr;
+  }
+  .hero-left, .hero-right{
+    min-height: 260px;
+  }
+  .hero-title{
+    font-size: 38px;
+  }
+  .cards-3{
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ===== Mobile Menu Layout ===== */
+/* =========================================================
+   MOBILE MENU (<= 600px)
+   - hamburger visible
+   - nav hidden until body.nav-open
+   - dropdowns are click-open via .has-sub.open > .submenu
+   ========================================================= */
 @media (max-width: 600px){
-  .nav-toggle{ display:flex; }
+  .nav-toggle{ display: inline-flex; }
 
+  /* mobile nav becomes an overlay panel below header */
   .nav{
+    display: none; /* closed by default */
     position: fixed;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background:#fff;
+    background: #fff;
     border-bottom: 1px solid var(--border);
-    display:none;
-    padding: 10px 12px;
+    padding: 10px 12px 16px;
+    z-index: 998;
   }
-  body.nav-open .nav{ display:block; }
+  body.nav-open .nav{ display: block; }
 
   .menu{
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 6px;
   }
 
   .menu-link{
     width: 100%;
-    text-align:left;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 12px 12px;
   }
 
+  /* mobile submenu: static, indented */
   .submenu{
     position: static;
-    border: 0;
     box-shadow: none;
-    padding: 6px 6px 10px;
-    display:none;
+    border: 0;
+    padding: 6px 0 2px;
+    margin: 0;
+    display: none; /* closed until open */
+    background: transparent;
   }
-}
 
-/* === 桌機保底：滑鼠移上去也會展開（就算 JS 沒載入也看得到） === */
-@media (min-width: 861px){
-  .menu-item.has-sub:hover > .submenu{ display:block; }
-  .submenu li.has-sub:hover > .submenu{ display:block; }
-}
+  /* click-open state */
+  .has-sub.open > .submenu{ display: block; }
 
-/* ===============================
-   FIX：讓你的 submenu 能顯示
-   （完全對應你貼的 nav HTML）
-   =============================== */
-
-/* 保證 nav 本體在桌機一定可見 */
-@media (min-width: 861px){
-  .nav{
-    display: block !important;
+  .submenu-link{
+    font-size: 14px;
+    font-weight: 800;
+    padding: 10px 12px;
+    border-radius: 12px;
   }
-}
 
-/* 第一層下拉（組織運作區 / 社團活動績效區 / 財務管理區） */
-.menu-item.has-sub:hover > .submenu{
-  display: block !important;
-}
-
-/* 第二層下拉（年度計畫 / 管理運作 / 年度活動 / 經費控管 等） */
-.submenu li.has-sub:hover > .submenu{
-  display: block !important;
-}
-
-/* 位置與層級，避免被蓋住 */
-.menu-item{ position: relative; }
-.submenu{
-  z-index: 9999;
-}
-
-/* 第二層位置修正 */
-@media (min-width: 861px){
+  /* 2nd level indent */
   .submenu.level-2{
-    left: 100%;
-    top: 0;
+    position: static;
+    display: none;
+    padding-left: 10px;
+  }
+  .submenu > li.has-sub.open > .submenu.level-2{ display: block; }
+
+  /* make second-level items look nested */
+  .submenu.level-2 .submenu-link{
+    padding-left: 16px;
+    font-weight: 700;
   }
 }
 
-/* ===============================
-   Dropdown：改成點擊開合（不會滑走就消失）
-   =============================== */
-
-.menu,
-.submenu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* ========== Optional: reduce motion ========== */
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior: auto !important; }
 }
-
-/* 讓有子選單的項目成為定位基準 */
-.has-sub {
-  position: relative;
-}
-
-/* 預設全部子選單先關閉 */
-.submenu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  min-width: 240px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.08);
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
-  z-index: 9999;
-}
-
-/* 第二層：往右開 */
-.submenu.level-2 {
-  top: -8px;
-  left: calc(100% + 12px);
-}
-
-/* 只有在 .open 時才顯示 */
-.has-sub.open > .submenu {
-  display: block;
-}
-
-/* 按鈕樣式（你可以依照原本設計再微調） */
-.menu-link,
-.submenu-link {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  font: inherit;
-  padding: 10px 12px;
-  border-radius: 12px;
-}
-
-/* 子選單內項目 hover */
-.submenu a.submenu-link,
-.submenu button.submenu-link {
-  color: #111;
-  text-decoration: none;
-}
-
-.submenu a.submenu-link:hover,
-.submenu button.submenu-link:hover {
-  background: rgba(0,0,0,.06);
-}
-
-/* ＋號旋轉表示展開 */
-.has-sub.open > .menu-link .plus,
-.has-sub.open > .submenu-link .plus {
-  transform: rotate(45deg);
-}
-
-.plus {
-  transition: transform .15s ease;
-  line-height: 1;
-}
-
-/* 讓 header / nav 不要把下拉選單裁切掉 */
-.site-header,
-.nav-wrap,
-.nav,
-.menu {
-  overflow: visible;
-}
-
-/* 桌機版：第一層 submenu 預設靠左展開 */
-@media (min-width: 901px) {
-  .menu-item.has-sub { position: relative; }
-
-  .menu-item > .submenu {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    z-index: 9999;
-  }
-
-  /* ✅ 右側的主選單（財務管理區、聯絡我們附近）改成靠右展開，避免超出視窗 */
-  .menu-item:last-child > .submenu,
-  .menu-item:nth-last-child(2) > .submenu {
-    left: auto;
-    right: 0;
-  }
-
-  /* 第二層 submenu：預設往右開 */
-  .submenu .has-sub { position: relative; }
-  .submenu .has-sub > .submenu.level-2 {
-    position: absolute;
-    top: 0;
-    left: calc(100% + 10px);
-    z-index: 9999;
-  }
-
-  /* ✅ 如果第二層在右側也會被切，就改成往左開 */
-  .menu-item:last-child .submenu .has-sub > .submenu.level-2,
-  .menu-item:nth-last-child(2) .submenu .has-sub > .submenu.level-2 {
-    left: auto;
-    right: calc(100% + 10px);
-  }
-}
-
-/* ========== 桌機/平板：維持橫向導覽列（右圖那種） ========== */
-
-/* 1) 主選單橫向排列 */
-.nav .menu{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
-
-/* 2) 每個第一層選單項目 */
-.menu-item{ position:relative; }
-.menu-link{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  border:0;
-  background:transparent;
-  cursor:pointer;
-  font: inherit;
-  padding:10px 12px;
-  border-radius:10px;
-}
-
-/* 3) 下拉選單：預設隱藏 */
-.submenu{
-  list-style:none;
-  margin:0;
-  padding:10px;
-  position:absolute;
-  top:calc(100% + 10px);
-  left:0;
-  min-width:240px;
-  background:#fff;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:14px;
-  box-shadow:0 12px 28px rgba(0,0,0,.12);
-  display:none;
-  z-index:999;
-}
-
-/* 4) 第二層（右側再展開） */
-.submenu.level-2{
-  top:0;
-  left:calc(100% + 10px);
-  min-width:240px;
-}
-
-/* 5) 滑鼠移到 li 或用鍵盤 focus 時，下拉要出現（不會一滑就消失） */
-.menu-item.has-sub:hover > .submenu,
-.menu-item.has-sub:focus-within > .submenu{
-  display:block;
-}
-
-/* 第二層同理 */
-.submenu > li.has-sub:hover > .submenu.level-2,
-.submenu > li.has-sub:focus-within > .submenu.level-2{
-  display:block;
-}
-
-/* 6) 子選單連結樣式 */
-.submenu-link{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  width:100%;
-  padding:10px 12px;
-  border-radius:10px;
-  text-decoration:none;
-  color:#111;
-  background:transparent;
-  border:0;
-  cursor:pointer;
-  font: inherit;
-}
-.submenu-link:hover{
-  background:rgba(0,0,0,.06);
-}
-
-/* 7) + 符號（你要的右側符號） */
-.plus{
-  display:inline-flex;
-  width:22px;
-  height:22px;
-  align-items:center;
-  justify-content:center;
-  border-radius:6px;
-  background:rgba(0,0,0,.06);
-  font-weight:700;
-  line-height:1;
-}
-
-/* ========== 手機版：才改成漢堡與直向（斷點請用 768） ========== */
-@media (max-width: 768px){
-  /* 手機才顯示漢堡鈕（如果你本來就有 nav-toggle） */
-  .nav-toggle{ display:inline-flex; }
-
-  /* 手機主選單改直向 */
-  .nav .menu{
-    flex-direction:column;
-    align-items:stretch;
-    gap:8px;
-  }
-
-  /* 手機下拉不要用 hover，改用 JS 控制展開（下面會給 JS） */
-  .submenu{
-    position:static;
-    box-shadow:none;
-    border:0;
-    padding:0;
-    display:none; /* 交給 JS 打開 */
-  }
-
-  /* 手機第二層也一樣 */
-  .submenu.level-2{
-    position:static;
-  }
-
-  /* 手機如果要縮排好看 */
-  .submenu > li{ padding-left:10px; }
-  .submenu.level-2 > li{ padding-left:18px; }
-}
-
-/* 重要：如果你之前有把 .menu 設成 display:block / position:fixed 在大尺寸也套用，
-   這段放最後可以把桌機/平板拉回 flex 橫向 */
