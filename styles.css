@@ -341,9 +341,24 @@ img{ max-width:100%; display:block; }
     display:none;
   }
 
+.submenu .has-sub::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:-12px;   /* 形成一條透明橋 */
+  width:12px;
+  height:100%;
+}
+  
   .submenu a{
     padding:10px 12px;
   }
 
   .submenu.is-open{ display:block; }
 }
+
+/* 保險：讓滑鼠從左選單移到右選單時，不會穿過空隙 */
+.submenu .has-sub{
+  position:relative;
+}
+
