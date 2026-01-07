@@ -6,253 +6,158 @@
   <title>淡江大學大眾傳播學系第42屆系學會官方網站</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <!-- Top Navbar -->
-  <header class="topbar">
-    <div class="topbar-inner">
 
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">淡江大傳第42屆系學會官方網站</span>
-      </a>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">
+      <span class="brand-badge"></span>
+      <span>淡江大傳第42屆系學會官方網站</span>
+    </a>
 
-      <button class="nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false">
-        <span class="nav-toggle-lines" aria-hidden="true"></span>
-      </button>
+    <button class="nav-toggle" type="button" data-nav-toggle>選單</button>
 
-      <nav class="nav" aria-label="主選單">
-        <ul class="menu">
+    <nav class="nav" data-nav>
+      <ul>
+        <!-- 組織運作區 -->
+        <li class="has-sub">
+          <a href="org.html" data-dropdown-link>
+            組織運作區 <span class="caret">▾</span>
+          </a>
+          <div class="submenu">
+            <a href="org/constitution.html">組織章程</a>
 
-          <!-- 組織運作區 -->
-          <li class="menu-item has-sub">
-  <a class="menu-link" href="org.html">
-    <span class="label">組織運作區</span>
-    <span class="plus" aria-hidden="true">+</span>
-  </a>
+            <div class="has-sub">
+              <a href="org/annual-plan.html" data-dropdown-link>年度計畫 <span class="caret">▸</span></a>
+              <div class="submenu">
+                <a href="org/annual-plan/short-mid-long.html">短中長期年度計畫</a>
+                <a href="org/annual-plan/calendar.html">行事曆</a>
+              </div>
+            </div>
 
-  <ul class="submenu">
-    <li>
-      <a class="submenu-link" href="#">組織章程</a>
-    </li>
+            <div class="has-sub">
+              <a href="org/operations.html" data-dropdown-link>管理運作 <span class="caret">▸</span></a>
+              <div class="submenu">
+                <a href="org/operations/cadre-meetings.html">幹部例行會議記錄</a>
+                <a href="org/operations/event-meetings.html">活動會議記錄</a>
+                <a href="org/operations/member-meetings.html">社員大會會議記錄</a>
+                <a href="org/operations/election.html">選舉過程</a>
+              </div>
+            </div>
 
-    <li class="has-sub">
-      <span class="submenu-link">
-        <span class="label">年度計畫</span>
-        <span class="plus">+</span>
-      </span>
-      <ul class="submenu level-2">
-        <li><a class="submenu-link" href="#">短中長期年度計畫</a></li>
-        <li><a class="submenu-link" href="#">行事曆</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-
-              <!-- 管理運作（第二層） -->
-              <li class="has-sub">
-                <button class="submenu-link" type="button" aria-expanded="false">
-                  <span class="label">管理運作</span>
-                  <span class="plus" aria-hidden="true">+</span>
-                </button>
-                <ul class="submenu level-2">
-                  <li><a class="submenu-link" href="#">幹部例行會議記錄</a></li>
-                  <li><a class="submenu-link" href="#">活動會議記錄</a></li>
-                  <li><a class="submenu-link" href="#">社員大會會議記錄</a></li>
-                  <li><a class="submenu-link" href="#">選舉過程</a></li>
-                </ul>
-              </li>
-
-              <li><a class="submenu-link" href="#">年度活動</a></li>
-            </ul>
-          </li>
-
-          <!-- 社團活動績效區 -->
-          <li class="menu-item has-sub">
-            <button class="menu-link" type="button" aria-expanded="false">
-              <span class="label">社團活動績效區</span>
-              <span class="plus" aria-hidden="true">+</span>
-            </button>
-
-            <ul class="submenu">
-              <!-- 年度活動（第二層） -->
-              <li class="has-sub">
-                <button class="submenu-link" type="button" aria-expanded="false">
-                  <span class="label">年度活動</span>
-                  <span class="plus" aria-hidden="true">+</span>
-                </button>
-                <ul class="submenu level-2">
-                  <li><a class="submenu-link" href="#">動物FUN「傳」市</a></li>
-                  <li><a class="submenu-link" href="#">水深火熱ON AIR：只想「烤」慮你</a></li>
-                  <li><a class="submenu-link" href="#">公關思維✖️職場先機：踏入職場的超前部署</a></li>
-                  <li><a class="submenu-link" href="#">角頭崛起—蘭陽爭霸戰</a></li>
-                  <li><a class="submenu-link" href="#">114學年度第一學期期末系大會</a></li>
-                </ul>
-              </li>
-
-              <!-- 特色活動（第二層） -->
-              <li class="has-sub">
-                <button class="submenu-link" type="button" aria-expanded="false">
-                  <span class="label">特色活動</span>
-                  <span class="plus" aria-hidden="true">+</span>
-                </button>
-                <ul class="submenu level-2">
-                  <li><a class="submenu-link" href="#">大濛—電影包場</a></li>
-                  <li><a class="submenu-link" href="#">聖誕限時小活動</a></li>
-                </ul>
-              </li>
-
-              <li><a class="submenu-link" href="#">社群媒體分析</a></li>
-            </ul>
-          </li>
-
-          <!-- 財務管理區 -->
-          <li class="menu-item has-sub">
-            <button class="menu-link" type="button" aria-expanded="false">
-              <span class="label">財務管理區</span>
-              <span class="plus" aria-hidden="true">+</span>
-            </button>
-
-            <ul class="submenu">
-              <!-- 經費控管（第二層） -->
-              <li class="has-sub">
-                <button class="submenu-link" type="button" aria-expanded="false">
-                  <span class="label">經費控管</span>
-                  <span class="plus" aria-hidden="true">+</span>
-                </button>
-                <ul class="submenu level-2">
-                  <li><a class="submenu-link" href="#">財務管理制度</a></li>
-                  <li><a class="submenu-link" href="#">活動預算表</a></li>
-                  <li><a class="submenu-link" href="#">財務細流綜整</a></li>
-                  <li><a class="submenu-link" href="#">43屆新生系費收取名冊</a></li>
-                </ul>
-              </li>
-
-              <li><a class="submenu-link" href="#">器材管理</a></li>
-            </ul>
-          </li>
-
-          <li class="menu-item">
-            <a class="menu-link is-link" href="#contact">聯絡我們</a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <h1 class="hero-title">系學會資訊整合與透明公開</h1>
-          <p class="hero-desc">
-            將組織運作、年度計畫、活動成果與財務制度集中整理，方便查找、交接與留存。
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#">開始瀏覽</a>
-            <a class="btn ghost" href="#contact">聯絡我們</a>
+            <a href="org/annual-activities.html">年度活動</a>
           </div>
-        </div>
+        </li>
 
-        <div class="hero-right" aria-hidden="true">
-          <img
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80"
-            alt=""
-          />
+        <!-- 社團活動績效區 -->
+        <li class="has-sub">
+          <a href="performance.html" data-dropdown-link>
+            社團活動績效區 <span class="caret">▾</span>
+          </a>
+          <div class="submenu">
+            <div class="has-sub">
+              <a href="performance/annual-activities.html" data-dropdown-link>年度活動 <span class="caret">▸</span></a>
+              <div class="submenu">
+                <a href="performance/annual-activities/animal-fun.html">動物FUN「傳」市</a>
+                <a href="performance/annual-activities/bbq-on-air.html">水深火熱ON AIR:只想「烤」慮你</a>
+                <a href="performance/annual-activities/pr-career.html">公關思維✖️職場先機：踏入職場的超前部署</a>
+                <a href="performance/annual-activities/gang-war.html">角頭崛起—蘭陽爭霸戰</a>
+                <a href="performance/annual-activities/semester-meeting.html">114學年度第一學期期末系大會</a>
+              </div>
+            </div>
+
+            <div class="has-sub">
+              <a href="performance/featured-activities.html" data-dropdown-link>特色活動 <span class="caret">▸</span></a>
+              <div class="submenu">
+                <a href="performance/featured-activities/movie-screening.html">大濛—電影包場</a>
+                <a href="performance/featured-activities/christmas.html">聖誕限時小活動</a>
+              </div>
+            </div>
+
+            <a href="performance/social-media.html">社群媒體分析</a>
+          </div>
+        </li>
+
+        <!-- 財務管理區 -->
+        <li class="has-sub">
+          <a href="finance.html" data-dropdown-link>
+            財務管理區 <span class="caret">▾</span>
+          </a>
+          <div class="submenu">
+            <div class="has-sub">
+              <a href="finance/budget-control.html" data-dropdown-link>經費控管 <span class="caret">▸</span></a>
+              <div class="submenu">
+                <a href="finance/budget-control/rules.html">財務管理制度</a>
+                <a href="finance/budget-control/budgets.html">活動預算表</a>
+                <a href="finance/budget-control/cashflow-summary.html">財務細流綜整</a>
+                <a href="finance/budget-control/freshman-fee-roster.html">43屆新生系費收取名冊</a>
+              </div>
+            </div>
+
+            <a href="finance/equipment.html">器材管理</a>
+          </div>
+        </li>
+
+        <!-- 關於我們 -->
+        <li>
+          <a href="about.html">關於我們</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <h1 class="hero-title">系學會資訊整合與透明公開</h1>
+        <p class="hero-desc">
+          將組織運作、年度計畫、活動成果與財務制度集中整理，方便查找、交接與留存。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="org.html">開始瀏覽</a>
+          <a class="btn btn-ghost" href="about.html">聯絡我們</a>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="section-inner">
-        <h2 class="section-title">快速導覽</h2>
-        <div class="cards-3">
-          <a class="card" href="#">
-            <h3>組織運作區</h3>
-            <p>章程、年度計畫、管理運作與年度活動。</p>
-          </a>
-          <a class="card" href="#">
-            <h3>社團活動績效區</h3>
-            <p>年度活動、特色活動與社群媒體分析。</p>
-          </a>
-          <a class="card" href="#">
-            <h3>財務管理區</h3>
-            <p>經費控管、器材管理與相關制度。</p>
-          </a>
-        </div>
+      <div class="hero-media" aria-label="首頁主視覺">
+        <!-- 你可以把這張改成自己的圖：例如 images/hero.jpg -->
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=60" alt="團隊討論情境" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="contact">
-      <div class="section-inner">
-        <h2 class="section-title">聯絡我們</h2>
-        <div class="contact-card">
-          <p>Instagram：<a href="#" class="link">（之後放 IG 連結）</a></p>
-          <p>Email：<a href="#" class="link">（之後放信箱）</a></p>
-        </div>
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">快速導覽</h2>
+
+      <div class="quick-grid">
+        <a class="quick-card" href="org.html">
+          <h3>組織運作區</h3>
+          <p>章程、年度計畫、管理運作與年度活動。</p>
+        </a>
+
+        <a class="quick-card" href="performance.html">
+          <h3>社團活動績效區</h3>
+          <p>年度活動、特色活動與社群媒體分析。</p>
+        </a>
+
+        <a class="quick-card" href="finance.html">
+          <h3>財務管理區</h3>
+          <p>經費控管、器材管理與相關制度資料。</p>
+        </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer class="footer">
-    <div class="footer-inner">©淡江大傳第42屆系學會官方網站</div>
-  </footer>
+<footer class="site-footer">
+  <div class="container">
+    © 淡江大學大眾傳播學系第42屆系學會
+  </div>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-<script>
-  (function () {
-    const nav = document.querySelector('.nav');
-    if (!nav) return;
-
-    // 取得所有可開合的按鈕（第一層 + 第二層）
-    const toggles = nav.querySelectorAll('.has-sub > button');
-
-    function closeAll(exceptLi) {
-      nav.querySelectorAll('.has-sub.open').forEach(li => {
-        if (exceptLi && (li === exceptLi || li.contains(exceptLi))) return;
-        li.classList.remove('open');
-        const btn = li.querySelector(':scope > button');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
-    }
-
-    toggles.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const li = btn.closest('.has-sub');
-        const isOpen = li.classList.contains('open');
-
-        // 同層只保留一個展開（更像你參考的黑色選單）
-        // 若你希望可以同時開很多個，把下一行註解掉
-        closeAll(li);
-
-        if (!isOpen) {
-          li.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        } else {
-          li.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-
-    // 點選單外面：全部關閉
-    document.addEventListener('click', () => closeAll());
-
-    // ESC 關閉
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeAll();
-    });
-  })();
-</script>
