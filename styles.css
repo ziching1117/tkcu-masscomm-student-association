@@ -136,7 +136,11 @@ img{ max-width:100%; display:block; }
 /* 第二層 submenu（滑過第一層後往右展開） */
 .submenu .has-sub > .submenu{
   top:-8px;
-  left:calc(100% + 10px);
+  left:100%;   /* ❗移除 +10px，消除 hover 空隙 */
+}
+
+.submenu .has-sub > .submenu{
+  padding-left: 8px; /* 視覺上有距離，但不會斷 hover */
 }
 
 .submenu .has-sub:hover > .submenu{
