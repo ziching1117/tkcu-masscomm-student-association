@@ -347,7 +347,7 @@ body{
 }
 
 /* ===== Mobile Menu Layout ===== */
-@media (max-width: 860px){
+@media (max-width: 600px){
   .nav-toggle{ display:flex; }
 
   .nav{
