@@ -548,3 +548,131 @@ body{
     right: calc(100% + 10px);
   }
 }
+
+/* ========== 桌機/平板：維持橫向導覽列（右圖那種） ========== */
+
+/* 1) 主選單橫向排列 */
+.nav .menu{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+/* 2) 每個第一層選單項目 */
+.menu-item{ position:relative; }
+.menu-link{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  font: inherit;
+  padding:10px 12px;
+  border-radius:10px;
+}
+
+/* 3) 下拉選單：預設隱藏 */
+.submenu{
+  list-style:none;
+  margin:0;
+  padding:10px;
+  position:absolute;
+  top:calc(100% + 10px);
+  left:0;
+  min-width:240px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+  display:none;
+  z-index:999;
+}
+
+/* 4) 第二層（右側再展開） */
+.submenu.level-2{
+  top:0;
+  left:calc(100% + 10px);
+  min-width:240px;
+}
+
+/* 5) 滑鼠移到 li 或用鍵盤 focus 時，下拉要出現（不會一滑就消失） */
+.menu-item.has-sub:hover > .submenu,
+.menu-item.has-sub:focus-within > .submenu{
+  display:block;
+}
+
+/* 第二層同理 */
+.submenu > li.has-sub:hover > .submenu.level-2,
+.submenu > li.has-sub:focus-within > .submenu.level-2{
+  display:block;
+}
+
+/* 6) 子選單連結樣式 */
+.submenu-link{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#111;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+  font: inherit;
+}
+.submenu-link:hover{
+  background:rgba(0,0,0,.06);
+}
+
+/* 7) + 符號（你要的右側符號） */
+.plus{
+  display:inline-flex;
+  width:22px;
+  height:22px;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  background:rgba(0,0,0,.06);
+  font-weight:700;
+  line-height:1;
+}
+
+/* ========== 手機版：才改成漢堡與直向（斷點請用 768） ========== */
+@media (max-width: 768px){
+  /* 手機才顯示漢堡鈕（如果你本來就有 nav-toggle） */
+  .nav-toggle{ display:inline-flex; }
+
+  /* 手機主選單改直向 */
+  .nav .menu{
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
+  }
+
+  /* 手機下拉不要用 hover，改用 JS 控制展開（下面會給 JS） */
+  .submenu{
+    position:static;
+    box-shadow:none;
+    border:0;
+    padding:0;
+    display:none; /* 交給 JS 打開 */
+  }
+
+  /* 手機第二層也一樣 */
+  .submenu.level-2{
+    position:static;
+  }
+
+  /* 手機如果要縮排好看 */
+  .submenu > li{ padding-left:10px; }
+  .submenu.level-2 > li{ padding-left:18px; }
+}
+
+/* 重要：如果你之前有把 .menu 設成 display:block / position:fixed 在大尺寸也套用，
+   這段放最後可以把桌機/平板拉回 flex 橫向 */
