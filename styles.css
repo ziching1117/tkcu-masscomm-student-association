@@ -105,7 +105,7 @@ img{ max-width:100%; display:block; }
 
 .submenu{
   position:absolute;
-  top:calc(100% + 10px);
+  top:100%;          /* ❗ 移除 +10px，消除 hover 空隙 */
   left:0;
   min-width:220px;
   background:#fff;
