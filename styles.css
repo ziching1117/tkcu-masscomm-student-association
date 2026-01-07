@@ -505,3 +505,46 @@ body{
   transition: transform .15s ease;
   line-height: 1;
 }
+
+/* 讓 header / nav 不要把下拉選單裁切掉 */
+.site-header,
+.nav-wrap,
+.nav,
+.menu {
+  overflow: visible;
+}
+
+/* 桌機版：第一層 submenu 預設靠左展開 */
+@media (min-width: 901px) {
+  .menu-item.has-sub { position: relative; }
+
+  .menu-item > .submenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    z-index: 9999;
+  }
+
+  /* ✅ 右側的主選單（財務管理區、聯絡我們附近）改成靠右展開，避免超出視窗 */
+  .menu-item:last-child > .submenu,
+  .menu-item:nth-last-child(2) > .submenu {
+    left: auto;
+    right: 0;
+  }
+
+  /* 第二層 submenu：預設往右開 */
+  .submenu .has-sub { position: relative; }
+  .submenu .has-sub > .submenu.level-2 {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 10px);
+    z-index: 9999;
+  }
+
+  /* ✅ 如果第二層在右側也會被切，就改成往左開 */
+  .menu-item:last-child .submenu .has-sub > .submenu.level-2,
+  .menu-item:nth-last-child(2) .submenu .has-sub > .submenu.level-2 {
+    left: auto;
+    right: calc(100% + 10px);
+  }
+}
