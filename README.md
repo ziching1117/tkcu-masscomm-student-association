@@ -1,1 +1,1 @@
-# tku-masscomm-student-association
+# tkcu-masscomm-student-association
