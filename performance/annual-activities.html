@@ -1,109 +1,82 @@
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="../index.html">
-      <span class="brand-badge"></span>
-      <span>淡江大傳第42屆系學會官方網站</span>
-    </a>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>年度活動｜活動績效區</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
 
-    <button class="nav-toggle" type="button" data-nav-toggle>選單</button>
+<body>
+  <!-- ===== Header（保持你現有的導覽列；如果你有共用模板就用你的）===== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/tkcu-masscomm-student-association/index.html">
+        <span class="dot"></span>
+        淡江大傳第42屆系學會官方網站
+      </a>
 
-    <nav class="nav" data-nav>
-      <ul>
-        <!-- 組織運作區 -->
-        <li class="has-sub">
-          <a href="../org.html" data-dropdown-link>
-            組織運作區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <a href="../org/constitution.html">組織章程</a>
+      <!-- 這裡如果你原本有完整導覽列，請保留你原本那段 nav（不要跟我這段衝突） -->
+      <nav class="nav">
+        <a href="/tkcu-masscomm-student-association/org.html">組織運作區</a>
+        <a href="/tkcu-masscomm-student-association/performance.html">活動績效區</a>
+        <a href="/tkcu-masscomm-student-association/finance.html">財務管理區</a>
+        <a href="/tkcu-masscomm-student-association/about.html">關於我們</a>
+      </nav>
+    </div>
+  </header>
 
-            <div class="has-sub">
-              <a href="../org/annual-plan.html" data-dropdown-link>
-                年度計畫 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../org/annual-plan/short-mid-long.html">短中長期年度計畫</a>
-                <a href="../org/annual-plan/calendar.html">行事曆</a>
-              </div>
-            </div>
+  <main class="page">
+    <div class="container">
+      <div class="breadcrumb">首頁/活動績效區/年度活動</div>
 
-            <div class="has-sub">
-              <a href="../org/operations.html" data-dropdown-link>
-                管理運作 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../org/operations/cadre-meetings.html">幹部例行會議記錄</a>
-                <a href="../org/operations/event-meetings.html">活動會議記錄</a>
-                <a href="../org/operations/member-meetings.html">社員大會會議記錄</a>
-                <a href="../org/operations/election.html">選舉過程</a>
-              </div>
-            </div>
+      <h1>年度活動</h1>
+      <p class="muted" style="margin-top: 8px;">
+        本頁彙整第42屆系學會年度活動之成果入口。點擊活動卡片即可進入各活動首頁查看企劃、執行流程與佐證資料。
+      </p>
 
-            <a href="../org/annual-activities.html">年度活動</a>
+      <!-- ===== 5 Cards ===== -->
+      <section class="activity-grid" aria-label="年度活動入口">
+        <a class="activity-card" href="./annual-activities/animal-fun.html">
+          <div class="activity-img">
+            <img src="../assets/performance/annual-activities/animal-fun.jpg" alt="動物FUN「傳」市 大合照" loading="lazy">
           </div>
-        </li>
+          <div class="activity-title">動物FUN「傳」市</div>
+        </a>
 
-        <!-- 活動績效區 -->
-        <li class="has-sub">
-          <a href="../performance.html" data-dropdown-link>
-            活動績效區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <div class="has-sub">
-              <a href="../performance/annual-activities.html" data-dropdown-link>
-                年度活動 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../performance/annual-activities/animal-fun.html">動物FUN「傳」市</a>
-                <a href="../performance/annual-activities/bbq-on-air.html">水深火熱ON AIR:只想「烤」慮你</a>
-                <a href="../performance/annual-activities/pr-career.html">公關思維✖️職場先機：踏入職場的超前部署</a>
-                <a href="../performance/annual-activities/gang-war.html">角頭崛起—蘭陽爭霸戰</a>
-                <a href="../performance/annual-activities/semester-meeting.html">114學年度第一學期期末系大會</a>
-              </div>
-            </div>
-
-            <div class="has-sub">
-              <a href="../performance/featured-activities.html" data-dropdown-link>
-                特色活動 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../performance/featured-activities/movie-screening.html">大濛—電影包場</a>
-                <a href="../performance/featured-activities/christmas.html">聖誕限時小活動</a>
-              </div>
-            </div>
-
-            <a href="../performance/social-media.html">社群媒體分析</a>
+        <a class="activity-card" href="./annual-activities/bbq-on-air.html">
+          <div class="activity-img">
+            <img src="../assets/performance/annual-activities/bbq-on-air.jpg" alt="水深火熱ON AIR：只想「烤」慮你 大合照" loading="lazy">
           </div>
-        </li>
+          <div class="activity-title">水深火熱ON AIR：只想「烤」慮你</div>
+        </a>
 
-        <!-- 財務管理區 -->
-        <li class="has-sub">
-          <a href="../finance.html" data-dropdown-link>
-            財務管理區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <div class="has-sub">
-              <a href="../finance/budget-control.html" data-dropdown-link>
-                經費控管 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../finance/budget-control/rules.html">財務管理制度</a>
-                <a href="../finance/budget-control/budgets.html">活動預算表</a>
-                <a href="../finance/budget-control/cashflow-summary.html">財務細流綜整</a>
-                <a href="../finance/budget-control/freshman-fee-roster.html">43屆新生系費收取名冊</a>
-              </div>
-            </div>
-
-            <a href="../finance/equipment.html">器材管理</a>
+        <a class="activity-card" href="./annual-activities/pr-career.html">
+          <div class="activity-img">
+            <img src="../assets/performance/annual-activities/pr-career.jpg" alt="公關思維✖️職場先機：踏入職場的超前部署 大合照" loading="lazy">
           </div>
-        </li>
+          <div class="activity-title">公關思維✖️職場先機：踏入職場的超前部署</div>
+        </a>
 
-        <!-- 關於我們 -->
-        <li>
-          <a href="../about.html">關於我們</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        <a class="activity-card" href="./annual-activities/gatao.html">
+          <div class="activity-img">
+            <img src="../assets/performance/annual-activities/gatao.jpg" alt="角頭崛起—蘭陽爭霸戰 大合照" loading="lazy">
+          </div>
+          <div class="activity-title">角頭崛起—蘭陽爭霸戰</div>
+        </a>
 
+        <a class="activity-card" href="./annual-activities/semester-assembly.html">
+          <div class="activity-img">
+            <img src="../assets/performance/annual-activities/semester-assembly.jpg" alt="114學年度第一學期期末系大會 大合照" loading="lazy">
+          </div>
+          <div class="activity-title">114學年度第一學期期末系大會</div>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 淡江大學大眾傳播學系第42屆系學會</div>
+  </footer>
+</body>
+</html>
