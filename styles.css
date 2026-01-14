@@ -454,3 +454,56 @@ img{ max-width:100%; display:block; }
 @media (max-width: 560px){
   .activity-grid{ grid-template-columns: 1fr; }
 }
+
+/* ===== 年度活動：卡片式入口（像咖啡社版型）===== */
+.activity-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.activity-card{
+  display:block;
+  text-decoration:none;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  overflow:hidden;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.activity-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.activity-img{
+  aspect-ratio: 4 / 3;  /* 近似咖啡社那種比例 */
+  background:#f3f3f3;
+}
+
+.activity-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.activity-title{
+  padding: 14px 14px 16px;
+  font-weight: 700;
+  font-size: 18px;
+  color:#111;
+  text-align:center;
+}
+
+/* 平板：2欄 */
+@media (max-width: 980px){
+  .activity-grid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+
+/* 手機：1欄 */
+@media (max-width: 560px){
+  .activity-grid{ grid-template-columns: 1fr; }
+}
