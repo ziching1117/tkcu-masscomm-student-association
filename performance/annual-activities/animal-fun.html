@@ -3,65 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>動物 Fun「傳」市｜年度活動</title>
 
-  <!-- 全站共用 CSS（依你的專案路徑調整；這裡以 performance/annual-activities/ 為例） -->
-  <link rel="stylesheet" href="../../styles.css" />
+  <title>動物Fun「傳」市｜年度活動</title>
 
-  <!-- 本頁局部覆蓋 -->
+  <!-- 全站統一 CSS（用絕對路徑，所有頁面都一致） -->
+  <link rel="stylesheet" href="/tkcu-masscomm-student-association/styles.css" />
+
+  <!-- 全站統一：導覽列互動 JS（如果你原本有用到下拉/子選單） -->
+  <script defer src="/tkcu-masscomm-student-association/scripts/nav.js"></script>
+
+  <!-- 這一頁才需要的覆蓋樣式：建議先留空；若真的要寫 page-only CSS 再放進來 -->
   <style>
-    .activity-container{max-width:1100px;margin:0 auto;padding:40px 20px;}
-    .info-card{background:#f8f8f8;border-radius:12px;padding:20px;margin:18px 0 30px;}
-    .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
-    .highlight{font-weight:700;}
-
-    /* PDCA 規格 */
-    .pdca-wrap{margin-top:20px;}
-    .pdca-block{
-      background:#fafafa;
-      border-radius:12px;
-      padding:22px;
-      margin:26px 0;
-      border:1px solid #e6e6e6;
-    }
-    .pdca-title{
-      text-align:center;
-      font-size:22px;
-      margin:0 0 18px;
-      letter-spacing:1px;
-      font-weight:800;
-    }
-
-    /* 區內標題階層 */
-    .sec-title{font-size:18px;margin:18px 0 8px;font-weight:800;text-align:left;}
-    .sub-title{font-size:15px;margin:10px 0 6px;font-weight:800;text-align:left;}
-    .text{font-size:14px;line-height:1.8;margin:0 0 10px;text-align:left;color:#333;}
-
-    /* 檔案/按鈕呈現（PDF、簡報等） */
-    .file-actions{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px;}
-    .btn-link{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:10px;
-      background:#1f3a8a;
-      color:#fff;
-      text-decoration:none;
-      font-size:14px;
-      font-weight:700;
-    }
-    .btn-link.secondary{background:#374151;}
-    .btn-link.light{background:#4b5563;}
-    .hint{font-size:13px;color:#666;margin:0 0 10px;}
-
-    /* 圖片可點擊放大（點圖另開） */
-    .img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:10px 0 14px;}
-    .img-card a{display:block;text-decoration:none;}
-    .img-card img{width:100%;border-radius:10px;border:1px solid #e5e7eb;}
-    .img-caption{font-size:13px;color:#555;margin-top:6px;text-align:left;}
-
-    /* 影片 */
-    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid #e5e7eb;}
-    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+    /* Page-only overrides (optional) */
   </style>
 </head>
 
