@@ -1,108 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>動物Fun「傳」市｜淡江大傳第42屆系學會</title>
+  <meta charset="UTF-8">
+  <title>動物 Fun「傳」市｜活動績效區</title>
 
-  <!-- 主站 CSS（一定要放在 head） -->
-  <link rel="stylesheet" href="/tkcu-masscomm-student-association/styles.css">
+  <!-- 全站共用 CSS -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  <!-- 活動頁局部覆蓋（找不到 styles.css 時也能生效） -->
+  <style>
+    .activity-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .info-card {
+      background: #f8f8f8;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .highlight {
+      font-weight: 600;
+    }
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 16px;
+    }
+    .pdca-section {
+      background: #fafafa;
+      border-left: 6px solid #ccc;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .photo-grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .file-list a {
+      display: block;
+      margin: 6px 0;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ===== Header / 導覽列 ===== -->
-<header class="site-header">
-  <div class="container">
-    <nav class="nav">
-      <a class="brand" href="/tkcu-masscomm-student-association/index.html">
-        ■ 淡江大傳第42屆系學會官方網站
-      </a>
+<!-- 這裡放你全站共用 header（如果有 include 就照你原本的） -->
 
-      <ul class="nav-menu">
-        <!-- 組織運作區 -->
-        <li class="has-sub">
-          <a href="/tkcu-masscomm-student-association/org.html" data-dropdown-link>
-            組織運作區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <a href="/tkcu-masscomm-student-association/org/constitution.html">組織章程</a>
-            <a href="/tkcu-masscomm-student-association/org/annual-plan.html">年度計畫</a>
-            <a href="/tkcu-masscomm-student-association/org/operations/cadre-meetings.html">管理運作</a>
-          </div>
-        </li>
+<main class="activity-container">
 
-        <!-- 活動績效區 -->
-        <li class="has-sub">
-          <a href="/tkcu-masscomm-student-association/performance.html" data-dropdown-link>
-            活動績效區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <a href="/tkcu-masscomm-student-association/performance/annual-activities.html">年度活動</a>
-            <a href="/tkcu-masscomm-student-association/performance/featured-activities.html">特色活動</a>
-            <a href="/tkcu-masscomm-student-association/performance/social-media.html">社群媒體分析</a>
-          </div>
-        </li>
+  <!-- 活動標題 -->
+  <h1>動物 Fun「傳」市</h1>
 
-        <!-- 財務管理區 -->
-        <li class="has-sub">
-          <a href="/tkcu-masscomm-student-association/finance.html" data-dropdown-link>
-            財務管理區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <a href="/tkcu-masscomm-student-association/finance/budget-control.html">經費控管</a>
-            <a href="/tkcu-masscomm-student-association/finance/equipment.html">器材管理</a>
-          </div>
-        </li>
+  <!-- A. 活動基本資訊 -->
+  <section class="info-card">
+    <h2>活動基本資訊</h2>
+    <div class="info-grid">
+      <div><span class="highlight">活動日期：</span>2025/9/10</div>
+      <div><span class="highlight">活動對象：</span>大一新生</div>
+      <div><span class="highlight">活動地點：</span>淡江大學校內</div>
+      <div><span class="highlight">總參與人數：</span>113 人</div>
+      <div><span class="highlight">整體滿意度：</span>5.7 / 6</div>
+      <div><span class="highlight">主辦單位：</span>淡江大學大眾傳播學系第 42 屆系學會</div>
+    </div>
+  </section>
 
-        <!-- 關於我們 -->
-        <li>
-          <a href="/tkcu-masscomm-student-association/about.html">關於我們</a>
-        </li>
+  <!-- B. 成效摘要 -->
+  <section>
+    <h2>成效摘要</h2>
+    <ul>
+      <li>活動整體滿意度達 5.7 / 6，回饋高度正向。</li>
+      <li>成功吸引 113 位新生參與，出席率穩定。</li>
+      <li>活動形式具互動性，有效促進新生彼此認識。</li>
+    </ul>
+  </section>
+
+  <!-- C. PDCA -->
+  <section>
+    <h2>PDCA 活動執行說明</h2>
+
+    <div class="pdca-section">
+      <h3>P｜計畫（Plan）</h3>
+      <ul>
+        <li>活動目標：協助新生認識系上環境與同儕。</li>
+        <li>KPI：滿意度 ≥ 5.5 / 6，參與人數 ≥ 100 人。</li>
+        <li>事前規劃完整流程與分工表。</li>
       </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- ===== 主要內容 ===== -->
-<main class="page">
-  <div class="container">
-
-    <!-- 麵包屑 -->
-    <div class="breadcrumb">
-      首頁 /
-      活動績效區 /
-      年度活動
     </div>
 
-    <!-- 標題 -->
-    <h1>動物FUN「傳」市</h1>
-
-    <!-- 活動簡介 -->
-    <div class="card">
-      <p>
-        本活動為本屆系學會年度活動之一，結合主題策展、實體互動與社群推廣，
-        透過活動設計提升系上凝聚力與對外能見度。
-      </p>
+    <div class="pdca-section">
+      <h3>D｜執行（Do）</h3>
+      <ul>
+        <li>依流程表完成活動攤位配置與時間控管。</li>
+        <li>幹部全程現場支援，維持秩序與互動。</li>
+      </ul>
     </div>
 
-    <!-- 活動照片 -->
-    <h2>活動紀錄</h2>
-    <div class="grid grid-3">
-      <img src="/tkcu-masscomm-student-association/assets/performance/animal-fun/photo-1.jpg" alt="活動照片">
-      <img src="/tkcu-masscomm-student-association/assets/performance/animal-fun/photo-2.jpg" alt="活動照片">
-      <img src="/tkcu-masscomm-student-association/assets/performance/animal-fun/photo-3.jpg" alt="活動照片">
+    <div class="pdca-section">
+      <h3>C｜檢核（Check）</h3>
+      <ul>
+        <li>問卷回收後統計整體滿意度與文字回饋。</li>
+        <li>多數回饋肯定活動氣氛與互動設計。</li>
+      </ul>
     </div>
 
-  </div>
+    <div class="pdca-section">
+      <h3>A｜改進（Act）</h3>
+      <ul>
+        <li>未來可增加更多分流動線，減少尖峰等待。</li>
+        <li>宣傳可提前一週曝光，提升報名預期。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- D. 宣傳與籌備 -->
+  <section>
+    <h2>宣傳與籌備紀錄</h2>
+    <ul>
+      <li>活動海報於 IG、限動曝光。</li>
+      <li>線上報名表蒐集新生資料。</li>
+      <li>事前召開籌備會議確認流程與分工。</li>
+    </ul>
+  </section>
+
+  <!-- E. 現場照片 -->
+  <section>
+    <h2>現場活動紀錄</h2>
+    <div class="photo-grid">
+      <img src="images/animal-fun/photo1.jpg" alt="活動照片">
+      <img src="images/animal-fun/photo2.jpg" alt="活動照片">
+      <img src="images/animal-fun/photo3.jpg" alt="活動照片">
+    </div>
+  </section>
+
+  <!-- F. 檢討與附件 -->
+  <section>
+    <h2>檢討會與佐證資料</h2>
+    <div class="file-list">
+      <a href="docs/animal-fun/proposal.pdf" target="_blank">📄 活動企劃書（PDF）</a>
+      <a href="docs/animal-fun/meeting-minutes.pdf" target="_blank">📄 檢討會會議紀錄（PDF）</a>
+      <a href="docs/animal-fun/questionnaire.pdf" target="_blank">📄 問卷結果摘要（PDF）</a>
+    </div>
+  </section>
+
 </main>
 
-<!-- ===== Footer ===== -->
-<footer class="site-footer">
-  <div class="container">
-    © 淡江大學大眾傳播學系第42屆系學會
-  </div>
-</footer>
+<!-- footer（沿用全站） -->
 
 </body>
 </html>
