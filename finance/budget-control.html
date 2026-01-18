@@ -1,106 +1,136 @@
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="../index.html">
-      <span class="brand-badge"></span>
-      <span>淡江大傳第42屆系學會官方網站</span>
-    </a>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>經費控管｜淡江大傳第42屆系學會</title>
 
-    <button class="nav-toggle" type="button" data-nav-toggle>選單</button>
+  <!-- 全站統一樣式 -->
+  <link rel="stylesheet" href="/tkcu-masscomm-student-association/styles.css" />
 
-    <nav class="nav" data-nav>
-      <ul>
-        <!-- 組織運作區 -->
-        <li class="has-sub">
-          <a href="../org.html" data-dropdown-link>
-            組織運作區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <a href="../org/constitution.html">組織章程</a>
+  <style>
+    .section-hint { color:#6b7280; font-size:14px; margin-top:8px; }
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:20px; }
+    .card-link { text-decoration:none; color:inherit; }
+  </style>
+</head>
 
-            <div class="has-sub">
-              <a href="../org/annual-plan.html" data-dropdown-link>
-                年度計畫 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../org/annual-plan/short-mid-long.html">短中長期年度計畫</a>
-                <a href="../org/annual-plan/calendar.html">行事曆</a>
+<body>
+
+    <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="/tkcu-masscomm-student-association/index.html"><span class="brand-badge"></span><span>淡江大傳第42屆系學會官方網站</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle>選單</button>
+      <nav class="nav" data-nav>
+        <ul>
+          <li class="has-sub">
+            <a href="org.html" data-dropdown-link>組織運作區 <span class="caret">▾</span></a>
+            <div class="submenu">
+              <a href="org/constitution.html">組織章程</a>
+              <div class="has-sub">
+                <a href="org/annual-plan.html" data-dropdown-link>年度計畫 <span class="caret">▸</span></a>
+                <div class="submenu">
+                  <a href="org/annual-plan/short-mid-long.html">短中長期年度計畫</a>
+                  <a href="org/annual-plan/calendar.html">行事曆</a>
+                </div>
+              </div>
+              <div class="has-sub">
+                <a href="org/operations.html" data-dropdown-link>管理運作 <span class="caret">▸</span></a>
+                <div class="submenu">
+                  <a href="org/operations/cadre-meetings.html">幹部例行會議記錄</a>
+                  <a href="org/operations/event-meetings.html">活動會議記錄</a>
+                  <a href="org/operations/member-meetings.html">社員大會會議記錄</a>
+                  <a href="org/operations/election.html">選舉過程</a>
+                </div>
               </div>
             </div>
+          </li>
 
-            <div class="has-sub">
-              <a href="../org/operations.html" data-dropdown-link>
-                管理運作 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../org/operations/cadre-meetings.html">幹部例行會議記錄</a>
-                <a href="../org/operations/event-meetings.html">活動會議記錄</a>
-                <a href="../org/operations/member-meetings.html">社員大會會議記錄</a>
-                <a href="../org/operations/election.html">選舉過程</a>
+          <li class="has-sub">
+            <a href="performance.html" data-dropdown-link>活動績效區 <span class="caret">▾</span></a>
+            <div class="submenu">
+              <div class="has-sub">
+                <a href="performance/annual-activities.html" data-dropdown-link>年度活動 <span class="caret">▸</span></a>
+                <div class="submenu">
+                  <a href="performance/annual-activities/animal-fun.html">動物FUN「傳」市</a>
+                  <a href="performance/annual-activities/bbq-on-air.html">水深火熱ON AIR:只想「烤」慮你</a>
+                  <a href="performance/annual-activities/pr-career.html">公關思維✖️職場先機：踏入職場的超前部署</a>
+                  <a href="performance/annual-activities/gang-war.html">角頭崛起—蘭陽爭霸戰</a>
+                  <a href="performance/annual-activities/semester-meeting.html">114學年度第一學期期末系大會</a>
+                </div>
               </div>
-            </div>
-        </li>
-
-        <!-- 活動績效區 -->
-        <li class="has-sub">
-          <a href="../performance.html" data-dropdown-link>
-            活動績效區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <div class="has-sub">
-              <a href="../performance/annual-activities.html" data-dropdown-link>
-                年度活動 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../performance/annual-activities/animal-fun.html">動物FUN「傳」市</a>
-                <a href="../performance/annual-activities/bbq-on-air.html">水深火熱ON AIR:只想「烤」慮你</a>
-                <a href="../performance/annual-activities/pr-career.html">公關思維✖️職場先機：踏入職場的超前部署</a>
-                <a href="../performance/annual-activities/gang-war.html">角頭崛起—蘭陽爭霸戰</a>
-                <a href="../performance/annual-activities/semester-meeting.html">114學年度第一學期期末系大會</a>
+              <div class="has-sub">
+                <a href="performance/featured-activities.html" data-dropdown-link>特色活動 <span class="caret">▸</span></a>
+                <div class="submenu">
+                  <a href="performance/featured-activities/movie-screening.html">大濛—電影包場</a>
+                  <a href="performance/featured-activities/christmas.html">聖誕限時小活動</a>
+                </div>
               </div>
+              <a href="performance/social-media.html">社群媒體分析</a>
             </div>
+          </li>
 
-            <div class="has-sub">
-              <a href="../performance/featured-activities.html" data-dropdown-link>
-                特色活動 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../performance/featured-activities/movie-screening.html">大濛—電影包場</a>
-                <a href="../performance/featured-activities/christmas.html">聖誕限時小活動</a>
+          <li class="has-sub">
+            <a href="finance.html" data-dropdown-link>財務管理區 <span class="caret">▾</span></a>
+            <div class="submenu">
+              <div class="has-sub">
+                <a href="finance/budget-control.html" data-dropdown-link>經費控管 <span class="caret">▸</span></a>
+                <div class="submenu">
+                  <a href="finance/budget-control/rules.html">財務管理制度</a>
+                  <a href="finance/budget-control/budgets.html">活動預算表</a>
+                  <a href="finance/budget-control/cashflow-summary.html">財務細流綜整</a>
+                  <a href="finance/budget-control/freshman-fee-roster.html">43屆新生系費收取名冊</a>
+                </div>
               </div>
+              <a href="finance/equipment.html">器材管理</a>
             </div>
+          </li>
 
-            <a href="../performance/social-media.html">社群媒體分析</a>
-          </div>
-        </li>
+          <li><a href="about.html">關於我們</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 財務管理區 -->
-        <li class="has-sub">
-          <a href="../finance.html" data-dropdown-link>
-            財務管理區 <span class="caret">▾</span>
-          </a>
-          <div class="submenu">
-            <div class="has-sub">
-              <a href="../finance/budget-control.html" data-dropdown-link>
-                經費控管 <span class="caret">▸</span>
-              </a>
-              <div class="submenu">
-                <a href="../finance/budget-control/rules.html">財務管理制度</a>
-                <a href="../finance/budget-control/budgets.html">活動預算表</a>
-                <a href="../finance/budget-control/cashflow-summary.html">財務細流綜整</a>
-                <a href="../finance/budget-control/freshman-fee-roster.html">43屆新生系費收取名冊</a>
-              </div>
-            </div>
+  <main class="page-wrap">
+    <div class="breadcrumb">首頁 / 財務管理區 / 經費控管</div>
 
-            <a href="../finance/equipment.html">器材管理</a>
-          </div>
-        </li>
+    <h1 class="page-title">經費控管</h1>
 
-        <!-- 關於我們 -->
-        <li>
-          <a href="../about.html">關於我們</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <section class="panel">
+      <p class="section-hint">
+        本頁彙整本屆系學會之財務制度、預算編列、收支流向與相關名冊，供評鑑、查核與交接使用。
+      </p>
 
+      <div class="card-grid">
+
+        <a class="card card-link" href="/tkcu-masscomm-student-association/finance/budget-control/rules.html">
+          <div class="card-title">財務管理制度</div>
+          <div class="card-desc">經費使用原則、核銷流程與財務規範說明。</div>
+        </a>
+
+        <a class="card card-link" href="/tkcu-masscomm-student-association/finance/budget-control/budgets.html">
+          <div class="card-title">活動預算表</div>
+          <div class="card-desc">各項活動之預算規劃與經費配置。</div>
+        </a>
+
+        <a class="card card-link" href="/tkcu-masscomm-student-association/finance/budget-control/cashflow-summary.html">
+          <div class="card-title">財務細流彙整</div>
+          <div class="card-desc">實際收支紀錄與經費流向整理。</div>
+        </a>
+
+        <a class="card card-link" href="/tkcu-masscomm-student-association/finance/budget-control/freshman-fee-roster.html">
+          <div class="card-title">43屆新生系費收取名冊</div>
+          <div class="card-desc">新生系費繳交狀況與名單紀錄。</div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 淡江大學大眾傳播學系第42屆系學會
+  </footer>
+
+</body>
+</html>
