@@ -17,34 +17,58 @@
     }
 
     /* Banner（參考你圖二那種大圖橫幅感） */
-    .about-hero{
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid #eee;
-      background: #f7f7f7;
-      margin-bottom: 22px;
-    }
-    .about-hero .hero-img{
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      filter: saturate(0.95);
-    }
-    .about-hero .hero-text{
-      padding: 18px 18px 16px;
-      background: #fff;
-    }
-    .about-hero h1{
-      margin: 0 0 6px;
-      font-size: 28px;
-      letter-spacing: 0.5px;
-    }
-    .about-hero p{
-      margin: 0;
-      color: #666;
-      line-height: 1.7;
-      font-size: 15px;
-    }
+   .about-hero{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  margin-bottom: 28px;
+}
+
+/* 橫幅背景 */
+.about-hero .hero-img{
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6); /* 讓字更清楚 */
+}
+
+/* 疊在橫幅上的文字 */
+.about-hero .hero-overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.about-hero .hero-overlay h1{
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-hero .hero-overlay p{
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* 手機版微調 */
+@media (max-width: 600px){
+  .about-hero .hero-img{
+    height: 160px;
+  }
+  .about-hero .hero-overlay h1{
+    font-size: 22px;
+  }
+}
 
     /* 卡片區 */
     .team-grid{
@@ -225,9 +249,6 @@
       ></div>
       <div class="hero-text">
         <h1>第42屆系學會幹部介紹</h1>
-        <p>
-          本頁整理第42屆系學會幹部名單與職務分工。後續每位幹部將補上美宣製作的 Q 版大頭圖與更完整的個人簡歷內容。
-        </p>
       </div>
     </section>
 
@@ -245,9 +266,9 @@
         <p class="member-role">會長兼公關組</p>
         <p class="member-desc">對外聯繫與公共關係協調，統籌系學會對外窗口與整體形象一致性。</p>
         <div class="badge-row">
-          <span class="badge">對外聯繫</span>
+          <span class="badge">整體統籌</span>
           <span class="badge">公關協調</span>
-          <span class="badge">形象統籌</span>
+          <span class="badge">系會代表</span>
         </div>
       </article>
 
@@ -260,9 +281,9 @@
         <p class="member-role">副會長兼行政組</p>
         <p class="member-desc">協助會長處理行政事務，負責會議紀錄、文書資料建檔與內部流程管理。</p>
         <div class="badge-row">
-          <span class="badge">文書管理</span>
+          <span class="badge">文書建檔</span>
           <span class="badge">流程控管</span>
-          <span class="badge">會務支援</span>
+          <span class="badge">內部協調</span>
         </div>
       </article>
 
@@ -276,7 +297,7 @@
         <p class="member-desc">負責活動視覺設計、宣傳物製作與整體視覺風格規劃。</p>
         <div class="badge-row">
           <span class="badge">視覺設計</span>
-          <span class="badge">宣傳物</span>
+          <span class="badge">宣傳物發想</span>
           <span class="badge">風格統一</span>
         </div>
       </article>
@@ -303,7 +324,7 @@
         </div>
         <h2 class="member-name">吳左安</h2>
         <p class="member-role">活動組</p>
-        <p class="member-desc">規劃與執行系學會各項活動，協助活動流程設計與現場執行。</p>
+        <p class="member-desc">協助活動企劃、場控安排與工作分配，確保活動節奏與體驗品質。</p>
         <div class="badge-row">
           <span class="badge">活動規劃</span>
           <span class="badge">流程設計</span>
@@ -321,8 +342,8 @@
         <p class="member-desc">協助活動企劃、場控安排與工作分配，確保活動節奏與體驗品質。</p>
         <div class="badge-row">
           <span class="badge">場控安排</span>
-          <span class="badge">工作分配</span>
-          <span class="badge">品質控管</span>
+          <span class="badge">活動規劃</span>
+          <span class="badge">現場執行</span>
         </div>
       </article>
 
@@ -335,9 +356,9 @@
         <p class="member-role">機動組</p>
         <p class="member-desc">支援各組別臨時需求，協助現場機動支援與突發狀況處理。</p>
         <div class="badge-row">
-          <span class="badge">機動支援</span>
+          <span class="badge">物資支援</span>
           <span class="badge">應變處理</span>
-          <span class="badge">跨組協作</span>
+          <span class="badge">動線維持</span>
         </div>
       </article>
 
@@ -348,11 +369,11 @@
         </div>
         <h2 class="member-name">陳昱臻</h2>
         <p class="member-role">機動組</p>
-        <p class="member-desc">支援活動現場與行政雜務，協助物資搬運、動線維持與臨時任務。</p>
+        <p class="member-desc">支援各組別臨時需求，協助現場機動支援與突發狀況處理。</p>
         <div class="badge-row">
           <span class="badge">物資支援</span>
+          <span class="badge">應變處理</span>
           <span class="badge">動線維持</span>
-          <span class="badge">臨時任務</span>
         </div>
       </article>
 
