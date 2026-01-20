@@ -1,11 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>關於我們｜淡江大傳第42屆系學會</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- 全站共用 CSS（請維持你原本的路徑） -->
+  <link rel="stylesheet" href="/tkcu-masscomm-student-association/styles.css" />
+
+  <!-- About 頁局部覆蓋（只影響本頁） -->
+  <style>
+    .about-wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    /* Banner（參考你圖二那種大圖橫幅感） */
+    .about-hero{
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background: #f7f7f7;
+      margin-bottom: 22px;
+    }
+    .about-hero .hero-img{
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.95);
+    }
+    .about-hero .hero-text{
+      padding: 18px 18px 16px;
+      background: #fff;
+    }
+    .about-hero h1{
+      margin: 0 0 6px;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+    .about-hero p{
+      margin: 0;
+      color: #666;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* 卡片區 */
+    .team-grid{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+    @media (max-width: 1024px){
+      .team-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px){
+      .team-grid{ grid-template-columns: 1fr; }
+      .about-hero .hero-img{ height: 140px; }
+    }
+
+    .member-card{
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 18px 16px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 320px;
+    }
+
+    .avatar{
+      width: 104px;
+      height: 104px;
+      border-radius: 999px;
+      background: #f1f1f1;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid #eee;
+      display: grid;
+      place-items: center;
+      color: #888;
+      font-size: 13px;
+    }
+    .avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .member-name{
+      text-align: center;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+    .member-role{
+      text-align: center;
+      font-size: 14px;
+      color: #444;
+      font-weight: 700;
+      margin: 0;
+    }
+    .member-desc{
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.75;
+      text-align: center;
+      padding: 0 6px;
+    }
+
+    .badge-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: auto;
+    }
+    .badge{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #eee;
+      background: #fafafa;
+      color: #555;
+      white-space: nowrap;
+    }
+  </style>
 </head>
+
+<body>
+
+  <!-- 你原本全站的 Header/Navbar：請「原封不動」保留或貼回來 --></head>
 <body>
   <!-- header 同上：複製一致版本 -->
   <header class="site-header">
@@ -82,104 +214,151 @@
       </nav>
     </div>
   </header>
+  <main class="about-wrap">
 
-  <main class="page">
-    <section class="page-section">
-  <h2>第42屆系學會幹部介紹</h2>
-  <p class="muted">
-    本頁介紹淡江大學大眾傳播學系第42屆系學會幹部成員，包含職務分工與個人簡介。
-  </p>
+    <!-- Banner：換成你想用的橫幅圖（建議放 /assets/banners/about-banner.jpg 之類） -->
+    <section class="about-hero">
+      <div
+        class="hero-img"
+        style="background-image:url('./assets/about-banner.jpg');"
+        aria-label="關於我們橫幅圖"
+      ></div>
+      <div class="hero-text">
+        <h1>第42屆系學會幹部介紹</h1>
+        <p>
+          本頁整理第42屆系學會幹部名單與職務分工。後續每位幹部將補上美宣製作的 Q 版大頭圖與更完整的個人簡歷內容。
+        </p>
+      </div>
+    </section>
 
-  <div class="team-grid">
-    <!-- 1 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>鄭慈穎</h3>
-      <p class="role">會長兼公關組</p>
-      <p class="desc">
-        負責系學會整體運作統籌、對外聯繫與公共關係協調，確保各組別順利運作。
-      </p>
-    </div>
+    <!-- 8 人卡片 -->
+    <section class="team-grid">
 
-    <!-- 2 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>莊子靚</h3>
-      <p class="role">副會長兼行政組</p>
-      <p class="desc">
-        協助會長處理行政事務，負責會議紀錄、文書資料建檔與內部流程管理。
-      </p>
-    </div>
+      <!-- 1 會長兼公關組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <!-- 放你的 Q 版圖：例如 ./assets/chibi/zheng-ciying.png -->
+          <img src="./assets/chibi/zheng-ciying.png" alt="鄭慈穎 Q版大頭圖">
+          <!-- 如果你還沒圖，先把上面 img 註解掉，保留文字也行 -->
+        </div>
+        <h2 class="member-name">鄭慈穎</h2>
+        <p class="member-role">會長兼公關組</p>
+        <p class="member-desc">對外聯繫與公共關係協調，統籌系學會對外窗口與整體形象一致性。</p>
+        <div class="badge-row">
+          <span class="badge">對外聯繫</span>
+          <span class="badge">公關協調</span>
+          <span class="badge">形象統籌</span>
+        </div>
+      </article>
 
-    <!-- 3 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>林心宜</h3>
-      <p class="role">美宣組</p>
-      <p class="desc">
-        負責活動視覺設計、宣傳物製作與整體視覺風格規劃。
-      </p>
-    </div>
+      <!-- 2 副會長兼行政組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <img src="./assets/chibi/zhuang-ziling.png" alt="莊子靚 Q版大頭圖">
+        </div>
+        <h2 class="member-name">莊子靚</h2>
+        <p class="member-role">副會長兼行政組</p>
+        <p class="member-desc">協助會長處理行政事務，負責會議紀錄、文書資料建檔與內部流程管理。</p>
+        <div class="badge-row">
+          <span class="badge">文書管理</span>
+          <span class="badge">流程控管</span>
+          <span class="badge">會務支援</span>
+        </div>
+      </article>
 
-    <!-- 4 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>陳沛伶</h3>
-      <p class="role">財務組</p>
-      <p class="desc">
-        負責系學會經費控管、預算編列與財務資料彙整。
-      </p>
-    </div>
+      <!-- 3 美宣組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <img src="./assets/chibi/lin-xinyi.png" alt="林心宜 Q版大頭圖">
+        </div>
+        <h2 class="member-name">林心宜</h2>
+        <p class="member-role">美宣組</p>
+        <p class="member-desc">負責活動視覺設計、宣傳物製作與整體視覺風格規劃。</p>
+        <div class="badge-row">
+          <span class="badge">視覺設計</span>
+          <span class="badge">宣傳物</span>
+          <span class="badge">風格統一</span>
+        </div>
+      </article>
 
-    <!-- 5 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>吳左安</h3>
-      <p class="role">活動組</p>
-      <p class="desc">
-        規劃與執行系學會各項活動，協助活動流程與現場執行。
-      </p>
-    </div>
+      <!-- 4 財務組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <img src="./assets/chibi/chen-peiling.png" alt="陳沛伶 Q版大頭圖">
+        </div>
+        <h2 class="member-name">陳沛伶</h2>
+        <p class="member-role">財務組</p>
+        <p class="member-desc">負責經費控管、預算編列與財務資料彙整，協助核銷與帳務透明化。</p>
+        <div class="badge-row">
+          <span class="badge">預算編列</span>
+          <span class="badge">核銷流程</span>
+          <span class="badge">帳務彙整</span>
+        </div>
+      </article>
 
-    <!-- 6 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>劉彥妤</h3>
-      <p class="role">活動組</p>
-      <p class="desc">
-        規劃與執行系學會各項活動，協助活動流程與現場執行。
-      </p>
-    </div>
+      <!-- 5 活動組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <img src="./assets/chibi/wu-zuoan.png" alt="吳左安 Q版大頭圖">
+        </div>
+        <h2 class="member-name">吳左安</h2>
+        <p class="member-role">活動組</p>
+        <p class="member-desc">規劃與執行系學會各項活動，協助活動流程設計與現場執行。</p>
+        <div class="badge-row">
+          <span class="badge">活動規劃</span>
+          <span class="badge">流程設計</span>
+          <span class="badge">現場執行</span>
+        </div>
+      </article>
 
-    <!-- 7 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>周妙縈</h3>
-      <p class="role">機動組</p>
-      <p class="desc">
-        支援各組別活動需求，協助臨時任務與現場支援。
-      </p>
-    </div>
+      <!-- 6 活動組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <img src="./assets/chibi/liu-yanyu.png" alt="劉彥妤 Q版大頭圖">
+        </div>
+        <h2 class="member-name">劉彥妤</h2>
+        <p class="member-role">活動組</p>
+        <p class="member-desc">協助活動企劃、場控安排與工作分配，確保活動節奏與體驗品質。</p>
+        <div class="badge-row">
+          <span class="badge">場控安排</span>
+          <span class="badge">工作分配</span>
+          <span class="badge">品質控管</span>
+        </div>
+      </article>
 
-    <!-- 8 -->
-    <div class="team-card">
-      <div class="avatar">Q版頭像</div>
-      <h3>陳昱臻</h3>
-      <p class="role">機動組</p>
-      <p class="desc">
-        支援各組別活動需求，協助臨時任務與現場支援。
-      </p>
-    </div>
-  </div>
-</section>
+      <!-- 7 機動組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <img src="./assets/chibi/zhou-miaoyin.png" alt="周妙縈 Q版大頭圖">
+        </div>
+        <h2 class="member-name">周妙縈</h2>
+        <p class="member-role">機動組</p>
+        <p class="member-desc">支援各組別臨時需求，協助現場機動支援與突發狀況處理。</p>
+        <div class="badge-row">
+          <span class="badge">機動支援</span>
+          <span class="badge">應變處理</span>
+          <span class="badge">跨組協作</span>
+        </div>
+      </article>
 
-    </div>
+      <!-- 8 機動組 -->
+      <article class="member-card">
+        <div class="avatar">
+          <img src="./assets/chibi/chen-yuzhen.png" alt="陳昱臻 Q版大頭圖">
+        </div>
+        <h2 class="member-name">陳昱臻</h2>
+        <p class="member-role">機動組</p>
+        <p class="member-desc">支援活動現場與行政雜務，協助物資搬運、動線維持與臨時任務。</p>
+        <div class="badge-row">
+          <span class="badge">物資支援</span>
+          <span class="badge">動線維持</span>
+          <span class="badge">臨時任務</span>
+        </div>
+      </article>
+
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">© 淡江大學大眾傳播學系第42屆系學會</div>
-  </footer>
-
-  <script src="script.js"></script>
+  <!-- 你原本的 footer（若全站一致，也請沿用） -->
 </body>
 </html>
