@@ -670,13 +670,3 @@ img{ max-width:100%; display:block; }
 .media-scroll img:hover {
   transform: scale(1.05);
 }
-
-/* PDF 卡片 */
-.file-card {
-  padding: 20px;
-  border: 1px dashed #aaa;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-  white-space: nowrap;
-}
