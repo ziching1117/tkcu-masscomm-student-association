@@ -583,78 +583,23 @@
   </table>
 </section>
 
-<!-- 媒體滑動展示區：圖片（可點擊放大） -->
 <section class="media-section">
-  <h3 class="media-title">活動素材與紀錄</h3>
-  <p class="media-desc">左右滑動瀏覽，點擊圖片可放大查看。</p>
+  <h3>活動素材與紀錄</h3>
+  <p class="hint">左右滑動瀏覽，點擊圖片可放大查看。</p>
 
-  <div class="media-strip" aria-label="圖片滑動列">
-    <!-- 場地佈置圖 -->
-    <a class="media-item" href="assets/animal-fun/layout-01.jpg" data-lightbox data-caption="場地佈置圖（1）">
-      <img src="assets/animal-fun/layout-01.jpeg" alt="場地佈置圖（1）">
-      <span class="media-tag">場地佈置圖</span>
-    </a>
-
-    <a class="media-item" href="assets/animal-fun/layout-02.jpg" data-lightbox data-caption="場地佈置圖（2）">
-      <img src="assets/animal-fun/layout-02.jpeg" alt="場地佈置圖（2）">
-      <span class="media-tag">場地佈置圖</span>
-    </a>
-
-    <!-- 宣傳海報 -->
-    <a class="media-item" href="assets/animal-fun/poster-01.jpg" data-lightbox data-caption="宣傳海報">
-      <img src="assets/animal-fun/poster-01.jpg" alt="宣傳海報">
-      <span class="media-tag">宣傳海報</span>
-    </a>
-
-    <!-- 簽到表 -->
-    <a class="media-item" href="assets/animal-fun/sign-in-01.jpg" data-lightbox data-caption="簽到表">
-      <img src="assets/animal-fun/sign-in-01.jpg" alt="簽到表">
-      <span class="media-tag">簽到表</span>
-    </a>
-
-    <a class="media-item" href="assets/animal-fun/sign-in-01.jpg" data-lightbox data-caption="簽到表">
-      <img src="assets/animal-fun/sign-in-02.jpg" alt="簽到表">
-      <span class="media-tag">簽到表</span>
-    </a>
-
-    <a class="media-item" href="assets/animal-fun/sign-in-01.jpg" data-lightbox data-caption="簽到表">
-      <img src="assets/animal-fun/sign-in-03.jpg" alt="簽到表">
-      <span class="media-tag">簽到表</span>
-    </a>
-  
-    <!-- 現場活動記錄 -->
-    <a class="media-item" href="assets/animal-fun/record-01.jpg" data-lightbox data-caption="現場活動記錄（1）">
-      <img src="assets/animal-fun/record-01.jpeg" alt="現場活動記錄（1）">
-      <span class="media-tag">現場活動記錄</span>
-    </a>
-
-    <a class="media-item" href="assets/animal-fun/record-02.jpg" data-lightbox data-caption="現場活動記錄（2）">
-      <img src="assets/animal-fun/record-02.jpeg" alt="現場活動記錄（2）">
-      <span class="media-tag">現場活動記錄</span>
-    </a>
-
-    <a class="media-item" href="assets/animal-fun/record-02.jpg" data-lightbox data-caption="現場活動記錄（2）">
-      <img src="assets/animal-fun/record-03.jpeg" alt="現場活動記錄（2）">
-      <span class="media-tag">現場活動記錄</span>
-    </a>
+  <div class="media-scroll">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_01.jpeg" alt="場地佈置圖1" onclick="openLightbox(this)">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_02.jpeg" alt="場地佈置圖2" onclick="openLightbox(this)">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_poster-01.jpg" alt="宣傳海報" onclick="openLightbox(this)">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_sign-in-01.jpg" alt="簽到表1" onclick="openLightbox(this)">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_sign-in-02.jpg" alt="簽到表2" onclick="openLightbox(this)">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_sign-in-03.jpg" alt="簽到表3" onclick="openLightbox(this)">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_record-01.jpeg" alt="現場活動記錄1" onclick="openLightbox(this)">
+    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_record-02.jpeg" alt="現場活動記錄2" onclick="openLightbox(this)">
+      <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_record-03.jpeg" alt="現場活動記錄3" onclick="openLightbox(this)">
+    <!-- 之後加圖就照這行一直複製 -->
   </div>
 </section>
-
-<!-- 媒體滑動展示區：檔案（可放很多個，滑動） -->
-<section class="media-section">
-  <h3 class="media-title">檔案下載</h3>
-  <p class="media-desc">點擊卡片開啟或下載檔案。</p>
-
-  <div class="file-strip" aria-label="檔案滑動列">
-    <!-- 迎新簡報：建議 PDF -->哈
-    <a class="file-card" href="assets/animal-fun/slides-welcome-2025.pdf" target="_blank" rel="noopener">
-      <div class="file-icon" aria-hidden="true">PDF</div>
-      <div class="file-meta">
-        <div class="file-name">迎新簡報</div>
-        <div class="file-sub">slides-welcome-2025.pdf</div>
-      </div>
-    </a>
-
     <!-- 你也可以再加很多份，例如：簽到表原檔、流程表 PDF... -->
     <!--
     <a class="file-card" href="assets/animal-fun/xxx.pdf" target="_blank" rel="noopener">
@@ -773,6 +718,17 @@
 </section>
       
   </main>
+<script>
+function openLightbox(img) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = img.src;
+  lightbox.style.display = 'flex';
+}
 
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 </body>
 </html>
