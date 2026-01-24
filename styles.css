@@ -609,3 +609,74 @@ img{ max-width:100%; display:block; }
   max-width: 90%;
   max-height: 90%;
 }
+
+.media-section {
+  margin: 40px 0;
+}
+
+.media-section .hint {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* 分類按鈕 */
+.media-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.media-tabs .tab {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.media-tabs .tab.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* 分類內容 */
+.media-content {
+  display: none;
+}
+
+.media-content.active {
+  display: block;
+}
+
+/* 橫向滑動 */
+.media-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.media-scroll img {
+  height: 180px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.media-scroll img:hover {
+  transform: scale(1.05);
+}
+
+/* PDF 卡片 */
+.file-card {
+  padding: 20px;
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+}
