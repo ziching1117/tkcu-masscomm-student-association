@@ -585,19 +585,57 @@
 
 <section class="media-section">
   <h3>活動素材與紀錄</h3>
-  <p class="hint">左右滑動瀏覽，點擊圖片可放大查看。</p>
+  <p class="hint">點選分類切換內容，左右滑動瀏覽圖片，點擊可放大。</p>
 
-  <div class="media-scroll">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_01.jpeg" alt="場地佈置圖1" onclick="openLightbox(this)">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_02.jpeg" alt="場地佈置圖2" onclick="openLightbox(this)">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_poster-01.jpg" alt="宣傳海報" onclick="openLightbox(this)">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_sign-in-01.jpg" alt="簽到表1" onclick="openLightbox(this)">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_sign-in-02.jpg" alt="簽到表2" onclick="openLightbox(this)">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_sign-in-03.jpg" alt="簽到表3" onclick="openLightbox(this)">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_record-01.jpeg" alt="現場活動記錄1" onclick="openLightbox(this)">
-    <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_record-02.jpeg" alt="現場活動記錄2" onclick="openLightbox(this)">
-      <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_record-03.jpeg" alt="現場活動記錄3" onclick="openLightbox(this)">
-    <!-- 之後加圖就照這行一直複製 -->
+  <!-- 分類按鈕 -->
+  <div class="media-tabs">
+    <button class="tab active" onclick="switchTab('layout')">場佈圖</button>
+    <button class="tab" onclick="switchTab('poster')">宣傳海報</button>
+    <button class="tab" onclick="switchTab('sign')">簽到表</button>
+    <button class="tab" onclick="switchTab('photo')">現場活動記錄</button>
+  </div>
+
+  <!-- 場地佈置圖 -->
+  <div class="media-content active" id="layout">
+    <div class="media-scroll">
+      <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_01.jpeg" onclick="openLightbox(this)">
+      <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_02.jpeg" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <!-- 宣傳海報 -->
+  <div class="media-content" id="poster">
+    <div class="media-scroll">
+      <img src="../../assets/performance/annual-activities/animal-fun/poster_01.jpeg" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <!-- 簽到表 -->
+  <div class="media-content" id="sign">
+    <div class="media-scroll">
+      <img src="../../assets/performance/annual-activities/animal-fun/sign-in-01.jpg" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+<div class="media-content" id="sign">
+    <div class="media-scroll">
+      <img src="../../assets/performance/annual-activities/animal-fun/sign-in-02.jpg" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+<div class="media-content" id="sign">
+    <div class="media-scroll">
+      <img src="../../assets/performance/annual-activities/animal-fun/sign-in-03.jpg" onclick="openLightbox(this)">
+    </div>
+  </div>
+  
+  <!-- 現場活動記錄 -->
+  <div class="media-content" id="photo">
+    <div class="media-scroll">
+      <img src="../../assets/performance/annual-activities/animal-fun/record-01.jpeg" onclick="openLightbox(this)">
+      <img src="../../assets/performance/annual-activities/animal-fun/record-02.jpeg" onclick="openLightbox(this)">
+      <img src="../../assets/performance/annual-activities/animal-fun/record-03.jpeg" onclick="openLightbox(this)">
+    </div>
   </div>
 </section>
     <!-- 你也可以再加很多份，例如：簽到表原檔、流程表 PDF... -->
