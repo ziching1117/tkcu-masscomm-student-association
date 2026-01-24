@@ -536,3 +536,31 @@ img{ max-width:100%; display:block; }
   font-weight: bold;
   white-space: nowrap;
 }
+
+.image-gallery {
+  margin: 40px 0;
+}
+
+.image-gallery h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.gallery-scroll img {
+  height: 220px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-scroll img:hover {
+  transform: scale(1.03);
+}
