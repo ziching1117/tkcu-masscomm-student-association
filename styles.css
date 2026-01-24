@@ -564,3 +564,48 @@ img{ max-width:100%; display:block; }
 .gallery-scroll img:hover {
   transform: scale(1.03);
 }
+
+
+.media-section {
+  margin: 40px 0;
+}
+
+.media-section .hint {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.media-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.media-scroll img {
+  height: 180px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.media-scroll img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
