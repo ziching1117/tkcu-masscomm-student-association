@@ -507,3 +507,32 @@ img{ max-width:100%; display:block; }
 @media (max-width: 560px){
   .activity-grid{ grid-template-columns: 1fr; }
 }
+
+/* 分工表通用設定 */
+.assignment-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12pt;
+}
+
+.assignment-table th,
+.assignment-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  vertical-align: top;
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+/* 欄寬固定，避免跑版 */
+.assignment-table colgroup col:nth-child(1) { width: 18%; } /* 姓名 */
+.assignment-table colgroup col:nth-child(2) { width: 14%; } /* 職務 */
+.assignment-table colgroup col:nth-child(3) { width: 68%; } /* 工作內容 */
+
+/* 職務欄置中但不直排 */
+.assignment-table .role {
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+}
