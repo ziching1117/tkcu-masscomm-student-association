@@ -709,17 +709,9 @@
 </section>
       
   </main>
-<script>
-function openLightbox(img) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  lightboxImg.src = img.src;
-  lightbox.style.display = 'flex';
-}
 
-function closeLightbox() {
-  document.getElementById('lightbox').style.display = 'none';
-}
-</script>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 </body>
 </html>
