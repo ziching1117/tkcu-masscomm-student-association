@@ -670,3 +670,19 @@ img{ max-width:100%; display:block; }
 .media-scroll img:hover {
   transform: scale(1.05);
 }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
