@@ -581,82 +581,35 @@
       </tr>
     </tbody>
   </table>
-</section>
-
-<section class="media-section">
+  <section class="media-section">
   <h3>活動素材與紀錄</h3>
-  <p class="hint">點選分類切換內容，左右滑動瀏覽圖片，點擊可放大。</p>
 
-  <!-- 分類按鈕 -->
-  <div class="media-tabs">
-    <button class="tab active" onclick="switchTab('layout')">場佈圖</button>
-    <button class="tab" onclick="switchTab('poster')">宣傳海報</button>
-    <button class="tab" onclick="switchTab('sign')">簽到表</button>
-    <button class="tab" onclick="switchTab('photo')">現場活動記錄</button>
-  </div>
-
-  <!-- 場地佈置圖 -->
-  <div class="media-content active" id="layout">
-    <div class="media-scroll">
-      <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_01.jpeg" onclick="openLightbox(this)">
-      <img src="../../assets/performance/annual-activities/animal-fun/animal-fun_layout_02.jpeg" onclick="openLightbox(this)">
-    </div>
+  <!-- 場佈圖 -->
+  <h4>場佈圖</h4>
+  <div class="media-grid two-cols">
+    <img
+      src="../../assets/performance/annual-activities/animal-fun/layout_01.jpeg"
+      alt="場佈圖1"
+      onclick="openLightbox(this)"
+    >
+    <img
+      src="../../assets/performance/annual-activities/animal-fun/layout_02.jpeg"
+      alt="場佈圖2"
+      onclick="openLightbox(this)"
+    >
   </div>
 
   <!-- 宣傳海報 -->
-  <div class="media-content" id="poster">
-    <div class="media-scroll">
-      <img src="../../assets/performance/annual-activities/animal-fun/poster_01.jpeg" onclick="openLightbox(this)">
-    </div>
-  </div>
-
-  <!-- 簽到表 -->
-  <div class="media-content" id="sign">
-    <div class="media-scroll">
-      <img src="../../assets/performance/annual-activities/animal-fun/sign-in-01.jpg" onclick="openLightbox(this)">
-    </div>
-  </div>
-
-<div class="media-content" id="sign">
-    <div class="media-scroll">
-      <img src="../../assets/performance/annual-activities/animal-fun/sign-in-02.jpg" onclick="openLightbox(this)">
-    </div>
-  </div>
-
-<div class="media-content" id="sign">
-    <div class="media-scroll">
-      <img src="../../assets/performance/annual-activities/animal-fun/sign-in-03.jpg" onclick="openLightbox(this)">
-    </div>
-  </div>
-  
-  <!-- 現場活動記錄 -->
-  <div class="media-content" id="photo">
-    <div class="media-scroll">
-      <img src="../../assets/performance/annual-activities/animal-fun/record-01.jpeg" onclick="openLightbox(this)">
-      <img src="../../assets/performance/annual-activities/animal-fun/record-02.jpeg" onclick="openLightbox(this)">
-      <img src="../../assets/performance/annual-activities/animal-fun/record-03.jpeg" onclick="openLightbox(this)">
-    </div>
-  </div>
-</section>
-    <!-- 你也可以再加很多份，例如：簽到表原檔、流程表 PDF... -->
-    <!--
-    <a class="file-card" href="assets/animal-fun/xxx.pdf" target="_blank" rel="noopener">
-      <div class="file-icon" aria-hidden="true">PDF</div>
-      <div class="file-meta">
-        <div class="file-name">檔案名稱</div>
-        <div class="file-sub">xxx.pdf</div>
-      </div>
-    </a>
-    -->
+  <h4>宣傳海報</h4>
+  <div class="media-grid one-col">
+    <img
+      src="../../assets/performance/annual-activities/animal-fun/poster_01.jpeg"
+      alt="宣傳海報"
+      onclick="openLightbox(this)"
+    >
   </div>
 </section>
 
-<!-- Lightbox（點擊圖片放大用） -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="關閉">×</button>
-  <img class="lightbox-img" alt="">
-  <div class="lightbox-caption" aria-live="polite"></div>
-</div>
 
 <!-- ============ C（檢核） ============ -->
 <section class="pdca-block" id="pdca-c">
