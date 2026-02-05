@@ -14,14 +14,13 @@
       overflow: hidden;
       border: 1px solid rgba(0,0,0,.08);
       background: #f6f6f6;
-    }
-    .hero img{
-      width: 100%;
-      height: clamp(220px, 34vw, 420px);
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.02);
-    }
+      
+  .hero img{
+    width: 100%;
+    height: auto;          /* 關鍵：高度自動 */
+    display: block;        /* 避免圖片底部多出空隙 */
+    object-fit: contain;   /* 不裁切（如果你想滿版裁切就改回 cover） */
+   }
     .hero .overlay{
       position: absolute;
       inset: 0;
